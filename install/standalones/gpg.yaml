@@ -1,0 +1,4 @@
+- link:
+    ~/.gnupg/gpg.conf: configs/gpg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: configs/gpg/gpg-agent.conf
+    ~/.gnupg/scdaemon.conf: configs/gpg/scdaemon.conf
