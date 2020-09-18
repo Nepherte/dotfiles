@@ -1,0 +1,3 @@
+- link:
+    ~/.mpv/mpv.conf: configs/mpv/mpv.conf
+    ~/.mpv/script-opts/osc.conf: configs/mpv/script-opts/osc.conf
