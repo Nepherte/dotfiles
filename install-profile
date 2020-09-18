@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Root directory of the .dotfiles repository.
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Config from which all other 'standalones' inhert.
+BASE_CONFIG="base"
+
+# Extension of all the 'standalone'files.
+CONFIG_SUFFIX=".yaml"
+
+# Folder in which all 'installables' can be found.
+INSTALL_DIR="${BASE_DIR}/install"
+
+# Folder in which all installable 'standalones' can be found.
+STANDALONE_DIR="${INSTALL_DIR}/standalones"
+
+# Folder in which all installable 'profiles' can be found.
+PROFILE_DIR="${INSTALL_DIR}/profiles"
+
+# Location of the dotbin executable.
+DOTBOT_BIN="${BASE_DIR}/dotbot/bin/dotbot"
+
+cd "${BASE_DIR}"
+git submodule update --init --recursive --remote
+
+while IFS= read -r config; do
+  CONFIGS+=" ${config}"
+done < "${PROFILE_DIR}/$1"
+
+shift
+
+echo ${CONFIGS}
+
+for config in ${CONFIGS} ${@}; do
+  echo -e "\nConfigure $config"
+  configFile="$(mktemp)" ; echo -e "$(<"${STANDALONE_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}")\n$(<"${STANDALONE_DIR}/${config}${CONFIG_SUFFIX}")" > "$configFile"
+  "${DOTBOT_BIN}" -d "${BASE_DIR}" -c "$configFile" ; rm -f "$configFile"
+done
