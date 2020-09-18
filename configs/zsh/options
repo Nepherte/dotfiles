@@ -1,0 +1,11 @@
+# Navigate to directory without the need for cd.
+setopt autocd
+
+# Automically push directory when using cd.
+setopt autopushd
+
+# Don't print directory with push & pop.
+setopt pushdsilent
+
+# Case-insensitive globbing for autocomplete.
+setopt nocaseglob

@@ -1,0 +1,38 @@
+# Include options.
+if [ -f "$HOME/.zsh/options" ]; then
+  . $HOME/.zsh/options
+fi
+
+# Include exports.
+if [ -f "$HOME/.zsh/exports" ]; then
+  . $HOME/.zsh/exports
+fi
+
+# Include aliases.
+if [ -f "$HOME/.zsh/aliases" ]; then
+  .  $HOME/.zsh/aliases
+fi
+
+# Include functions.
+if [ -f "$HOME/.zsh/functions" ]; then
+  . $HOME/.zsh/functions
+fi
+
+# Manage Java environment.
+if which jenv > /dev/null; then
+  eval "$(jenv init -)"
+fi
+
+# Enable zsh completion.
+autoload -Uz compinit
+compinit
+
+# Ignore cases during auto-complete.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Use arrow keys to search history.
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+# Launch gpg agent and update tty.
+gpgconf --launch gpg-agent

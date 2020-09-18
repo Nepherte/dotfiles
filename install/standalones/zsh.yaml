@@ -1,0 +1,6 @@
+- link:
+    ~/.zshrc: configs/zsh/zshrc
+    ~/.zsh/aliases: configs/zsh/aliases
+    ~/.zsh/exports: configs/zsh/exports
+    ~/.zsh/functions: configs/zsh/functions
+    ~/.zsh/options: configs/zsh/options

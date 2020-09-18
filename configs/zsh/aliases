@@ -1,0 +1,4 @@
+# Navigation
+alias ls='gls -l --color=auto --group-directories-first --quoting-style=literal'
+
+# vim: set syntax=sh:

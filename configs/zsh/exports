@@ -1,0 +1,27 @@
+# Define zsh terminal prompt
+export PROMPT="%F{242}%n@%m%f: %F{blue}%1~ %F{yellow}❯%f "
+
+# Add zsh completion for brew.
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
+# Hide the beer mug emoji after finishing a build in brew.
+export HOMEBREW_NO_EMOJI=1
+
+# Periodically run brew cleanup when installing formulae.
+export HOMEBREW_INSTALL_CLEANUP=1
+
+# Disable brew analytics.
+export HOMEBREW_NO_ANALYTICS=1
+
+# Abort installs of brew casks when no checksum available.
+export HOMEBREW_CASK_OPTS=--require-sha
+
+# Set the correct TTY to use by GPG.
+export GPG_TTY="$(tty)"
+
+# Set the agent to use by SSH.
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+# vim: syntax=zsh

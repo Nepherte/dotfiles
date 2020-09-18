@@ -1,0 +1,7 @@
+# Update the terminal title before each command.
+
+function precmd() {
+ echo -n "\e]0;\a"
+}
+
+# vim: set syntax=zsh:
