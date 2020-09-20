@@ -15,6 +15,9 @@ export HOMEBREW_INSTALL_CLEANUP=1
 # Disable brew analytics.
 export HOMEBREW_NO_ANALYTICS=1
 
+# Don't generate a lock file for brew bundle.
+export HOMEBREW_BUNDLE_NO_LOCK=1
+
 # Abort installs of brew casks when no checksum available.
 export HOMEBREW_CASK_OPTS=--require-sha
 

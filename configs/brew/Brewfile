@@ -1,0 +1,79 @@
+################
+##    Taps    ##
+################
+
+# Homebrew
+tap "homebrew/core"
+tap "homebrew/services"
+tap "homebrew/bundle"
+
+## Casks
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+
+# Third-party
+tap "adoptopenjdk/openjdk"
+
+####################
+##    Formulae    ##
+####################
+
+# Command Line Tools
+brew "coreutils"
+
+# Shells
+brew "zsh"
+brew "zsh-completions"
+
+# Productivity
+cask "alfred"
+cask "firefox"
+
+# Dependency Management
+brew "mas"
+brew "jenv"
+
+# Java
+brew "maven"
+brew "tomcat"
+
+cask "adoptopenjdk8"
+cask "adoptopenjdk11"
+cask "adoptopenjdk15"
+
+# Office
+cask "microsoft-word"
+cask "microsoft-excel"
+cask "microsoft-powerpoint"
+cask "microsoft-teams"
+
+# Communication
+cask "skype"
+cask "whatsapp"
+
+# Peripherals
+cask "via"
+
+cask "logitech-options"
+cask "logitech-camera-settings"
+
+# Developer
+brew "git"
+brew "node"
+
+# Editors
+cask "atom"
+cask "intellij-idea"
+
+# Multimedia
+cask "roon"
+cask "mpv"
+
+# Networking
+cask "transmission"
+mas "WireGuard", id: 1451685025
+brew "wireguard-tools"
+
+# Security
+cask "1password"
+cask "gpg-suite"

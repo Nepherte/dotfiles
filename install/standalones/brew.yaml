@@ -1,0 +1,5 @@
+- link:
+    ~/.Brewfile: configs/brew/Brewfile
+
+- brewfile:
+  - ~/.Brewfile

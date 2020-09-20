@@ -28,5 +28,5 @@ git submodule update --init --recursive --remote
 
 for config in ${@}; do
   configFile="$(mktemp)" ; echo -e "$(<"${STANDALONE_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}")\n$(<"${STANDALONE_DIR}/${config}${CONFIG_SUFFIX}")" > "$configFile"
-  "${DOTBOT_BIN}" -d "${BASE_DIR}" -c "$configFile" ; rm -f "$configFile"
+  "${DOTBOT_BIN}" -d "${BASE_DIR}" --plugin-dir plugins/dotbot-brew -c "$configFile" ; rm -f "$configFile"
 done
