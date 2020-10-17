@@ -10,6 +10,9 @@ set wildmode=list:longest,full
 set suffixes=.backup,~,.swp,.aux,.dvi,.toc
 set fileformats=unix
 
+set modeline            " Allow setting per-file variables
+set modelines=1         " Only read the last line of a file
+
 " Backup settings
 set nobackup            " Do not keep a backup file
 set backupdir=/tmp      " Set backup directory (only if backup is enabled)
