@@ -1,0 +1,5 @@
+[commit]
+	gpgsign = true
+[user]
+	name = Bart Verhoeven
+	email = bartverhoeven@live.com
