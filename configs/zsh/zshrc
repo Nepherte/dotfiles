@@ -23,6 +23,11 @@ if which jenv > /dev/null; then
   eval "$(jenv init -)"
 fi
 
+# Manage Ruby environment.
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
 # Enable zsh completion.
 autoload -Uz compinit
 compinit
