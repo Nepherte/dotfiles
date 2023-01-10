@@ -4,6 +4,24 @@
 . "${DOTFILES:-~/.dotfiles}/helpers/echos.sh"
 . "${DOTFILES:-~/.dotfiles}/helpers/os.sh"
 
+# Returns the expected location of Homebrew.
+#
+# Globals:
+#   None
+# Arguments:
+#   None
+brew_home() {
+  if cmd_exists brew; then
+    echo "$(brew --prefix)";
+  elif on_linux; then
+    echo "/home/linuxbrew/.linuxbrew"
+  elif on_arm; then
+    echo "/opt/homebrew"
+  else
+    echo "/usr/local"
+  fi
+}
+
 # Installs Homebrew (if missing) and updates it to the latest version. Assumes that the Command Line Tools are installed.
 #
 # Globals:
@@ -11,15 +29,11 @@
 # Arguments:
 #   None
 install_brew() {
-  if ! cmd_exists brew; then
+  local brew_prefix="$(brew_home)"
+
+  if ! cmd_exists "brew"; then
     curl -s -o /tmp/homebrew-install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-    eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh"
-    
-    if on_arm; then
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-      eval "$(/usr/local/bin/brew shellenv)"
-    fi
+    eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh;\$(${brew_prefix}/bin/brew shellenv)"
   else
     eval_cmd "Update Homebrew" "brew update"
   fi
