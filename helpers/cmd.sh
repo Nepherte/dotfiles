@@ -29,24 +29,24 @@ eval_cmd() {
     ask_for_sudo
   fi
 
-  # Eexecute the command (redirect errors) and print its last output.
-  eval "$2" 2> /tmp/error |
-    while IFS= read -r line; do
-      clear_line
-      printf "%s" "$(echo "$line" | cut -c1-"$(tput cols)")"
-    done
+  # Split multiple commands into individual statements.
+  commands=(${(@s:;:)2})
 
-  if [ "$3" = "stdin" ]; then
-    clear_lines 2
-  fi
+  # Execute each command while showing its last line of output.
+  for command in $commands; do
+    (eval "$command" 2> /tmp/error-msg; echo "$?" > /tmp/error-code) |
+      while IFS= read -r line; do
+        clear_line
+        printf "%s" "$(echo "$line" | cut -c1-"$(tput cols)")"
+      done
+  done
 
-  cmd_status=${PIPESTATUS[0]}
+  cmd_status=$(</tmp/error-code)
 
   # Replace last 2 lines with success or error message.
   clear_lines 2
   if [ "$cmd_status" -ne 0 ]; then
-    print_error "$1" "$(cat /tmp/error)"
-    exit 1
+    print_error "$1" "$(</tmp/error-msg)"
   else
     print_ok "$1"
   fi
