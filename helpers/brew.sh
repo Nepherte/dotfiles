@@ -45,7 +45,7 @@ tap() {
 formula() {
   local name="Install $1"
 
-  if _formula_installed "$1"; then
+  if ! _formula_installed "$1"; then
     eval_cmd "$name" "brew install --formula $1"
   else
     print_ok "$name"
@@ -61,7 +61,7 @@ formula() {
 cask() {
   local name="Install $1"
 
-  if _cask_installed "$1"; then
+  if ! _cask_installed "$1"; then
     eval_cmd "$name" "brew install --cask $1"
   else
     print_ok "$name"
