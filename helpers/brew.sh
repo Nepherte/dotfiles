@@ -62,7 +62,7 @@ cask() {
   local name="Install $1"
 
   if ! _cask_installed "$1"; then
-    eval_cmd "$name" "brew install --cask $1"
+    eval_cmd "$name" "brew install --cask --adopt $1"
   else
     print_ok "$name"
   fi
