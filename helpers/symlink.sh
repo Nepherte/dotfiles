@@ -10,11 +10,11 @@
 #   $1 - the path the symbolic link points to
 #   $2 - the path under which to store the link
 symlink() {
-   target_dir="$(dirname $2)"
+   local target_dir="$(dirname $2)"
 
    if [ ! -d "$target_dir" ]; then
     # Look for the nearest existing directory in the path hierarchy.
-    existing_dir="$(dirname $target_dir)"
+    local existing_dir="$(dirname $target_dir)"
 
     while [ ! -d "$existing_dir" ]; do
       existing_dir="$(dirname $existing_dir)"
@@ -33,6 +33,6 @@ symlink() {
     eval_cmd "Change ownership $target_dir" "sudo chown ${USER}:staff $target_dir"
   fi
 
-  desc="Symbolic link for ${2/"$HOME\/"/}"
+  local desc="Symbolic link for ${2/"$HOME\/"/}"
   eval_cmd "$desc" "ln -sf $1 $2"
 }

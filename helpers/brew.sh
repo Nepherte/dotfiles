@@ -32,7 +32,7 @@ install_brew() {
 # Arguments:
 #   $1 - the package repository to add
 tap() {
-  name="Tap $1"
+  local name="Tap $1"
   eval_cmd "$name" "brew tap $1"
 }
 
@@ -43,7 +43,8 @@ tap() {
 # Arguments:
 #   $1 - the name of the package to install
 formula() {
-  name="Install $1"
+  local name="Install $1"
+
   if _formula_installed "$1"; then
     eval_cmd "$name" "brew install --formula $1"
   else
@@ -58,7 +59,8 @@ formula() {
 # Arguments:
 #   $1 - the name of the package to install
 cask() {
-  name="Install $1"
+  local name="Install $1"
+
   if _cask_installed "$1"; then
     eval_cmd "$name" "brew install --cask $1"
   else

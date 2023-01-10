@@ -138,11 +138,11 @@ print_error() {
 # Arguments:
 #   $1 - the header
 _print_header() {
-  col_width=$(tput cols)
-  title_width=${#1}
+  local col_width=$(tput cols)
+  local title_width=${#1}
 
-  title_prefix_length=$(((col_width-title_width)/2))
-  title_suffix_length=$((col_width-title_width-title_prefix_length))
+  local title_prefix_length=$(((col_width-title_width)/2))
+  local title_suffix_length=$((col_width-title_width-title_prefix_length))
 
   printf "%0.s-" $(seq 1 $col_width)
   printf "\n"
@@ -161,7 +161,7 @@ _print_header() {
 # Arguments:
 #   $1 - the title
 _print_title() {
-  title_width=${#1}
+  local title_width=${#1}
 
   printf "$1\n"
   printf "%0.s-" $(seq 1 $title_width)

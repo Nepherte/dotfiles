@@ -13,7 +13,7 @@
 git() {
   if [ ! -d "$2" ]; then
     # Look for the nearest existing directory in the path hierarchy.
-    dir_exists="$(dirname $2)"
+    local dir_exists="$(dirname $2)"
 
     while [ ! -d "$dir_exists" ]; do
       dir_exists="$(dirname $dir_exists)"

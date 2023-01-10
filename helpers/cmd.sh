@@ -30,7 +30,7 @@ eval_cmd() {
   fi
 
   # Split multiple commands into individual statements.
-  commands=(${(@s:;:)2})
+  local commands=(${(@s:;:)2})
 
   # Execute each command while showing its last line of output.
   for command in $commands; do
@@ -41,7 +41,7 @@ eval_cmd() {
       done
   done
 
-  cmd_status=$(</tmp/error-code)
+  local cmd_status=$(</tmp/error-code)
 
   # Replace last 2 lines with success or error message.
   clear_lines 2
@@ -61,7 +61,7 @@ eval_cmd() {
 ask_for_sudo() {
   # See if sudo permissions are cached.
   sudo -nv > /dev/null 2>&1
-  cached=$?
+  local cached=$?
 
   if [ "$cached" -ne 0 ]; then
     # They are not. Ask user to enter password.

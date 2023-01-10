@@ -11,7 +11,7 @@
 install_command_line_tools() {
   if ! _command_line_tools_installed; then
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
-    PROD="softwareupdate -l |
+    local PROD="softwareupdate -l |
       grep -B 1 -E 'Command Line Tools' |
       awk -F'*' '/^ *\\*/ {print \$2}' |
       sed -e 's/^ *Label: //' -e 's/^ *//' |
