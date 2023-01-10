@@ -128,7 +128,7 @@ print_ok() {
 # Arguments:
 #   $1 - the message to print
 print_error() {
-  printf "%b[error]%b   %s\n\n%s\n" "$COL_RED" "$COL_RESET" "$1" "$2"
+  printf "%b[error]%b   %s\n%s\n" "$COL_RED" "$COL_RESET" "$1" "$2"
 }
 
 # Prints a header.
