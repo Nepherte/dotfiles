@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-. "${0:A:h}"/cmd.sh
-. "${0:A:h}"/echos.sh
+. "${DOTFILES:-~/.dotfiles}/helpers/cmd.sh"
+. "${DOTFILES:-~/.dotfiles}/helpers/echos.sh"
 
 # Clones (or update) a git repo into a destination directory.
 #

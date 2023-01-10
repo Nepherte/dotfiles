@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-. "${0:A:h}"/symlink.sh
+. "${DOTFILES:-~/.dotfiles}/helpers/symlink.sh"
 
 CONFIG_DIR="${${0:A:h}:h}/configs"
 

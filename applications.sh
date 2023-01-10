@@ -3,12 +3,14 @@
 # This is a template which illustrates how the included scripts can be used
 # to install applications. For real-world examples, check the various branches.
 
-. "${0:A:h}"/helpers/echos.sh
-. "${0:A:h}"/helpers/brew.sh
-. "${0:A:h}"/helpers/cmd.sh
-. "${0:A:h}"/helpers/git.sh
-. "${0:A:h}"/helpers/mac.sh
-. "${0:A:h}"/helpers/os.sh
+DOTFILES="${0:A:h}"
+
+. "${DOTFILES}/helpers/echos.sh"
+. "${DOTFILES}/helpers/brew.sh"
+. "${DOTFILES}/helpers/cmd.sh"
+. "${DOTFILES}/helpers/git.sh"
+. "${DOTFILES}/helpers/mac.sh"
+. "${DOTFILES}/helpers/os.sh"
 
 header "Applications"
 ask_for_sudo

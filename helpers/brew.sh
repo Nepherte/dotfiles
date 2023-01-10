@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-. "${0:A:h}"/cmd.sh
-. "${0:A:h}"/echos.sh
-. "${0:A:h}"/os.sh
+. "${DOTFILES:-~/.dotfiles}/helpers/cmd.sh"
+. "${DOTFILES:-~/.dotfiles}/helpers/echos.sh"
+. "${DOTFILES:-~/.dotfiles}/helpers/os.sh"
 
 # Installs Homebrew (if missing) and updates it to the latest version. Assumes that the Command Line Tools are installed.
 #

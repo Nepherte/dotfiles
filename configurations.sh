@@ -3,8 +3,10 @@
 # This is a template which illustrates how the included scripts can be used
 # to symlink dotfiles. For real-world examples, check the various branches.
 
-. "${0:A:h}"/helpers/echos.sh
-. "${0:A:h}"/helpers/config.sh
+DOTFILES="${0:A:h}"
+
+. "${DOTFILES}/helpers/echos.sh"
+. "${DOTFILES}/helpers/config.sh"
 
 header "Configurations"
 

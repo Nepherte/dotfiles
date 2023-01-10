@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-. "${0:A:h}"/cmd.sh
+. "${DOTFILES:-~/.dotfiles}/helpers/cmd.sh"
 
 # Install the Command Line Tools.
 #

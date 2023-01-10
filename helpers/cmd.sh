@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-. "${0:A:h}"/echos.sh
+. "${DOTFILES:-~/.dotfiles}/helpers/echos.sh"
 
 # Indicates whether a command exists.
 #
