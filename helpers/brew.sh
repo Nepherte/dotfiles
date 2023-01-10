@@ -80,7 +80,7 @@ _formula_installed() {
   brew list --formula "$1" &> /dev/null
 }
 
-# Check if the specified binary package ("cask") is installed.
+# Checks if the specified binary package ("cask") is installed.
 #
 # Globals:
 #   None
