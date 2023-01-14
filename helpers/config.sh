@@ -2,7 +2,7 @@
 
 . "${DOTFILES:-~/.dotfiles}/helpers/symlink.sh"
 
-CONFIG_DIR="${${0:A:h}:h}/configs"
+CONFIG_DIR="${DOTFILES:-~/.dotfiles}/configs"
 
 # Symlinks a config file into the user's home directory.
 #
