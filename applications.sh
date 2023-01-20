@@ -99,6 +99,7 @@ cask "logi-options-plus"
 # Developer Tools
 comment "Developer Tools"
 formula "git"
+cask "httpie"
 
 # Editors
 comment "Editors"
