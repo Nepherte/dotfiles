@@ -1,0 +1,135 @@
+#!/usr/bin/env zsh
+
+############
+# dotfiles #
+############
+
+export DOTFILES=~/.dotfiles;
+
+. "${DOTFILES}/helpers/brew.sh"
+. "${DOTFILES}/helpers/cmd.sh"
+. "${DOTFILES}/helpers/io.sh"
+
+##########
+# locale #
+##########
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+#######
+# zsh #
+#######
+
+export HISTFILE="${HOME}/.zhistory"
+
+############
+# homebrew #
+############
+
+() {
+  local BREW_PREFIX="$(brew_home)"
+
+  if cmd_exists "${BREW_PREFIX}/bin/brew"; then
+    # Set up brew in the current shell environment.
+    eval "$(${BREW_PREFIX}/bin/brew shellenv)"
+
+    # Hide the beer mug emoji after finishing a build in brew.
+    export HOMEBREW_NO_EMOJI=1
+
+    # Periodically run brew cleanup when installing formulae.
+    export HOMEBREW_INSTALL_CLEANUP=1
+
+    # Disable brew analytics.
+    export HOMEBREW_NO_ANALYTICS=1
+
+    # Don't generate a lock file for brew bundle.
+    export HOMEBREW_BUNDLE_NO_LOCK=1
+
+    # Use vim when editing brew formulae.
+    export HOMEBREW_EDITOR=vim
+
+    # Do not print brew's behaviour with environment variables.
+    export HOMEBREW_NO_ENV_HINTS=1
+
+    if cmd_exists "ruby-build"; then
+      # Use openssl from brew when compiling ruby.
+      export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+    fi
+  fi
+}
+
+#############
+# oh-my-zsh #
+#############
+
+() {
+  if file_exists "/opt/oh-my-zsh/oh-my-zsh.sh"; then
+    # Path to the oh-my-zsh installation.
+    export ZSH="/opt/oh-my-zsh"
+
+    # Path to the oh-my-zsh custom folder.
+    export ZSH_CUSTOM="${ZSH}/custom"
+
+    # Path to the oh-my-zsh cache.
+    export ZSH_CACHE_DIR="${HOME}/.cache/oh-my-zsh"
+
+    # Path to the completion cache file.
+    export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/zcompdump"
+
+    # Do not manage the title of the terminal.
+    export DISABLE_AUTO_TITLE=false
+
+    # Set name of the oh-my-zsh theme to load.
+    export ZSH_THEME="powerlevel10k/powerlevel10k"
+
+    # Do not let oh-my-zsh replace ls with an alias.
+    export DISABLE_LS_COLORS="true"
+
+    if cmd_exists pyenv; then
+      # Suppress warnings on pyenv regarding non-interactive shells.
+      export ZSH_PYENV_QUIET=true
+    fi
+  fi
+}
+
+#############
+# coreutils #
+#############
+
+() {
+  if cmd_exists brew; then
+    local COREUTILS_PREFIX="$(brew --prefix coreutils)"
+
+    if dir_exists "${COREUTILS_PREFIX}/libexec/gnubin"; then
+      # Load all the commands of coreutils without the 'g' prefix.
+      export PATH="${COREUTILS_PREFIX}/libexec/gnubin:$PATH"
+    fi
+  fi
+}
+
+#############
+# dircolors #
+#############
+
+() {
+  if cmd_exists brew; then
+    local COREUTILS_PREFIX="$(brew --prefix coreutils)"
+
+    if dir_exists "${COREUTILS_PREFIX}/libexec/gnubin"; then
+      # Export LS_COLORS as defined in the dircolors file.
+      eval "$(dircolors ${HOME}/.dircolors)"
+    else
+      # Fallback to the built-in macOS approach with LSCOLORS.
+      export LSCOLORS=ExFxDxdxCxegedabagacad
+    fi
+  fi
+}
+
+#############
+# 1password #
+#############
+
+export SSH_AUTH_SOCK="${HOME}/.1password/agent.sock"
+
+# vim: set syntax=zsh:

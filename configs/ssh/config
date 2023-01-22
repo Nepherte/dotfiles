@@ -1,0 +1,33 @@
+Host anubis.nepherte.com
+  HostName anubis.nepherte.com
+  User bart
+  IdentityFile ~/.ssh/id_anubis.pub
+
+Host horus.nepherte.com
+  HostName horus.nepherte.com
+  User bart
+  IdentityFile ~/.ssh/id_horus.pub
+
+Host isis.nepherte.com
+  HostName isis.nepherte.com
+  User bart
+  IdentityFile ~/.ssh/id_isis.pub
+
+Host osiris.nepherte.com
+  HostName osiris.nepherte.com
+  User admin
+  IdentityFile ~/.ssh/id_osiris.pub
+
+Host gateway.nepherte.com
+  HostName gateway.nepherte.com
+  User admin
+  IdentityFile ~/.ssh/id_unifi.pub
+
+Host github.com
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_github.pub
+
+Host *
+  IdentityAgent ~/.1password/agent.sock
+  IdentitiesOnly yes
