@@ -35,6 +35,7 @@ tap "homebrew/services"
 comment "Casks"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
 
 comment "Third-party"
 tap "bell-sw/liberica"
@@ -122,3 +123,7 @@ comment "Security"
 cask "1password"
 cask "gpg-suite"
 cask "yubico-authenticator"
+
+# Fonts
+comment "Fonts"
+cask "font-jetbrains-mono"
