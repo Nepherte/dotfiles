@@ -126,4 +126,5 @@ cask "yubico-authenticator"
 
 # Fonts
 comment "Fonts"
-cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
