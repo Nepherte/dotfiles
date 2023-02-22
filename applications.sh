@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-# This is a template which illustrates how the included scripts can be used
-# to install applications. For real-world examples, check the various branches.
-
 DOTFILES="${0:A:h}"
 
 . "${DOTFILES}/helpers/echos.sh"
@@ -37,6 +34,15 @@ tap "homebrew/services"
 
 comment "Casks"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+
+comment "Third-party"
+tap "bell-sw/liberica"
+
+comment "Oh-my-zsh"
+git "https://github.com/ohmyzsh/ohmyzsh.git" "/opt/oh-my-zsh"
+git "https://github.com/romkatv/powerlevel10k.git" "/opt/oh-my-zsh/custom/themes/powerlevel10k"
 
 ##
 ## Install packages
@@ -46,7 +52,78 @@ title "Packages"
 # Command Line Tools
 comment "Command Line Tools"
 formula "coreutils"
+formula "tree"
+
+# Shells
+comment "Shells"
+formula "zsh"
+formula "zsh-completion"
 
 # Productivity
 comment "Productivity"
 cask "alfred"
+cask "firefox"
+cask "rectangle-pro"
+
+# Dependency Management
+comment "Dependency Management"
+formula "jenv"
+formula "nvm"
+formula "pyenv"
+formula "rbenv"
+
+# Java
+comment "Java"
+#formula "maven"
+cask "liberica-jdk8-full"
+cask "liberica-jdk11-full"
+cask "liberica-jdk17-full"
+cask "liberica-jdk19-full"
+
+# Office
+comment "Office"
+cask "microsoft-word"
+cask "microsoft-excel"
+cask "microsoft-powerpoint"
+cask "microsoft-outlook"
+cask "microsoft-teams"
+
+# Communication
+comment "Communication"
+cask "whatsapp"
+
+# Peripherals
+comment "Peripherals"
+cask "via"
+cask "logi-options-plus"
+
+# Developer Tools
+comment "Developer Tools"
+formula "git"
+cask "httpie"
+
+# Editors
+comment "Editors"
+cask "visual-studio-code"
+cask "intellij-idea"
+
+# Multimedia
+comment "Multimedia"
+cask "roon"
+cask "iina"
+
+# Networking
+comment "Networking"
+cask "mullvadvpn"
+cask "transmission"
+cask "transmit"
+
+# Security
+comment "Security"
+cask "1password"
+cask "gpg-suite"
+cask "yubico-authenticator"
+
+# Fonts
+comment "Fonts"
+cask "font-jetbrains-mono"
