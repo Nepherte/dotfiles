@@ -1,0 +1,26 @@
+#!/usr/bin/env zsh
+
+. "${DOTFILES}/helpers/cmd.sh"
+. "${DOTFILES}/helpers/io.sh"
+. "${DOTFILES}/helpers/os.sh"
+
+() {
+  # List long format, use size suffix, directories first, no quotes around names
+  local COREUTILS_PREFIX="$(brew --prefix coreutils)"
+  local GNU_BIN="${COREUTILS_PREFIX}/libexec/gnubin"
+
+  if cmd_exists "brew" && dir_exists "${GNU_BIN}"; then
+    alias ls='ls -h -l --color=tty --group-directories-first --quoting-style=literal'
+  else
+    alias ls='ls -h -l -G'
+  fi
+}
+
+() {
+  # Avoid brew warning about config scripts from pyenv
+  if cmd_exists "pyenv" && cmd_exists "brew"; then
+    alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+  fi
+}
+
+# vim: set syntax=zsh:
