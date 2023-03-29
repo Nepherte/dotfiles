@@ -126,6 +126,18 @@ export HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+############
+# IntelliJ #
+############
+
+() {
+  local INTELLIJ_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
+
+  if dir_exists "${INTELLIJ_HOME}"; then
+    export PATH="${INTELLIJ_HOME}:${PATH}"
+  fi
+}
+
 #############
 # 1password #
 #############
