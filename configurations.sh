@@ -40,6 +40,13 @@ config ssh/id_osiris.pub .ssh/id_osiris.pub
 config ssh/id_unifi.pub .ssh/id_unifi.pub
 
 ##
+## vim
+##
+title "vim"
+config vim/vimrc .vimrc
+config vim/vimrc .config/nvim/init.vim
+
+##
 ## zsh
 ##
 title "zsh"
