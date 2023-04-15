@@ -14,3 +14,6 @@
 
 [gpg "ssh"]
   program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[alias]
+  serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
