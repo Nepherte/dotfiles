@@ -1,19 +1,9 @@
 [user]
   name = Bart Verhoeven
   email = bart.verhoeven@hexagon.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHoO/i9i/WWcPIzEroeXYfShhT0pciLZS/eeBi+jANZN
 
 [init]
   defaultBranch = master
-
-[commit]
-  gpgsign = true
-
-[gpg]
-  format = ssh
-
-[gpg "ssh"]
-  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
 [alias]
   serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
