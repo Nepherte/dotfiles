@@ -20,14 +20,6 @@ title "git"
 config git/gitconfig .gitconfig
 
 ##
-## gpg
-##
-title "gpg"
-config gpg/gpg.conf .gnupg/gpg.conf
-config gpg/gpg-agent.conf .gnupg/gpg-agent.conf
-config gpg/scdaemon.conf .gnupg/scdaemon.conf
-
-##
 ## ssh
 ##
 title "ssh"
