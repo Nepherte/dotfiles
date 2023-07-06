@@ -121,7 +121,6 @@ cask "transmit"
 # Security
 comment "Security"
 cask "1password"
-cask "gpg-suite"
 cask "yubico-authenticator"
 
 # Fonts
