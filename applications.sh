@@ -96,6 +96,7 @@ cask "whatsapp"
 comment "Peripherals"
 cask "via"
 cask "logi-options-plus"
+cask "logitech-camera-settings"
 
 # Developer Tools
 comment "Developer Tools"
