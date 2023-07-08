@@ -121,7 +121,9 @@ cask "transmit"
 # Security
 comment "Security"
 cask "1password"
+
 cask "yubico-authenticator"
+cask "yubico-yubikey-manager"
 
 # Fonts
 comment "Fonts"
