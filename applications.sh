@@ -78,7 +78,7 @@ comment "Java"
 cask "liberica-jdk8-full"
 cask "liberica-jdk11-full"
 cask "liberica-jdk17-full"
-cask "liberica-jdk19-full"
+cask "liberica-jdk20-full"
 
 # Office
 comment "Office"
