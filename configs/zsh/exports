@@ -37,9 +37,6 @@ export HISTFILE="${HOME}/.zhistory"
     # Hide the beer mug emoji after finishing a build in brew.
     export HOMEBREW_NO_EMOJI=1
 
-    # Periodically run brew cleanup when installing formulae.
-    export HOMEBREW_INSTALL_CLEANUP=1
-
     # Disable brew analytics.
     export HOMEBREW_NO_ANALYTICS=1
 
