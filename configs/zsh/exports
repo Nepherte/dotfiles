@@ -37,9 +37,6 @@ export HISTFILE="${HOME}/.zhistory"
     # Hide the beer mug emoji after finishing a build in brew.
     export HOMEBREW_NO_EMOJI=1
 
-    # Disable brew analytics.
-    export HOMEBREW_NO_ANALYTICS=1
-
     # Don't generate a lock file for brew bundle.
     export HOMEBREW_BUNDLE_NO_LOCK=1
 
