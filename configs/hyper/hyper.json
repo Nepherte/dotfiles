@@ -1,0 +1,97 @@
+{
+  "$schema": "./schema.json",
+
+  "config": {
+    "updateChannel": "canary",
+
+    "env": {},
+    "shell": "",
+    "shellArgs": ["--login"],
+
+    "workingDirectory": "",
+    "preserveCWD": true,
+
+    "fontFamily": "JetBrains Mono",
+    "fontSize": 14,
+    "fontWeight": "normal",
+    "fontWeightBold": "bold",
+
+    "lineHeight": 1,
+    "letterSpacing": 0,
+
+    "scrollback": 1000,
+    "disableLigatures": false,
+
+    "cursorShape": "BLOCK",
+    "cursorBlink": false,
+    "cursorColor": "rgba(255,255,255,0.8)",
+    "cursorAccentColor": "rgba(0,0,0,1)",
+
+    "foregroundColor": "rgba(255,255,255,1)",
+    "backgroundColor": "rgba(0,0,0,0.85)",
+    "selectionColor": "rgba(255,255,255,0.3)",
+    "borderColor": "rgba(0,0,0,0.85)",
+
+    "padding": "12px 14px",
+    "css": ".tabs_nav{font-size:14px; font-weight:bold}",
+    "termCSS": "",
+
+    "colors": {
+      "black": "#2E3436",
+      "red": "#D50000",
+      "green": "#59E000",
+      "yellow": "#FFD000",
+      "blue": "#00AAFF",
+      "magenta": "#9D4FFF",
+      "cyan": "#00A1FF",
+      "white": "#E2E6DF",
+
+      "lightBlack": "#2E3436",
+      "lightRed": "#D50000",
+      "lightGreen": "#59E000",
+      "lightYellow": "#FFD000",
+      "lightBlue": "#00AAFF",
+      "lightMagenta": "#9D4FFF",
+      "lightCyan": "#00A1FF",
+      "lightWhite": "#E2E6DF"
+    },
+
+    "bell": "false",
+    "bellSound": null,
+    "bellSoundURL": null,
+
+    "showHamburgerMenu": "",
+    "showWindowControls": "",
+
+    "quickEdit": false,
+    "copyOnSelect": false,
+    "macOptionSelectionMode": "vertical",
+    "webLinksActivationKey": "",
+
+    "defaultSSHApp": true,
+    "webGLRenderer": true,
+    "imageSupport": true,
+    "screenReaderMode": false,
+
+    "disableAutoUpdates": false,
+    "autoUpdatePlugins": true,
+
+    "profiles": [{
+      "name": "default",
+      "config": {}
+    }],
+    "defaultProfile": "default"
+  },
+
+  "keymaps": {
+
+  },
+
+  "plugins": [
+    "hyper-quit",
+    "hyper-tabs-enhanced"
+  ],
+  "localPlugins": [
+
+  ]
+}

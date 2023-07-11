@@ -62,6 +62,7 @@ formula "zsh-completion"
 comment "Productivity"
 cask "alfred"
 cask "firefox"
+cask "hyper"
 cask "rectangle-pro"
 
 # Dependency Management
