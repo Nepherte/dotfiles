@@ -28,14 +28,6 @@ fi
 ##
 title "Repositories"
 
-comment "Formulae"
-tap "homebrew/core"
-tap "homebrew/services"
-
-comment "Casks"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-
 comment "Third-party"
 tap "bell-sw/liberica"
 
