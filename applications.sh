@@ -111,7 +111,6 @@ cask "httpie"
 
 # Editors
 comment "Editors"
-cask "visual-studio-code"
 cask "intellij-idea"
 
 # Multimedia
