@@ -20,6 +20,13 @@ title "git"
 config git/gitconfig .gitconfig
 
 ##
+## hyper
+##
+title "hyper"
+config hyper/hyper.json .config/Hyper/hyper.json
+config hyper/schema.json .config/Hyper/schema.json
+
+##
 ## ssh
 ##
 title "ssh"
