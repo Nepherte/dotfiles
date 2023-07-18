@@ -100,21 +100,6 @@ export HISTFILE="${HOME}/.zhistory"
 }
 
 #############
-# coreutils #
-#############
-
-() {
-  if cmd_exists brew; then
-    local COREUTILS_PREFIX="$(brew --prefix coreutils)"
-
-    if dir_exists "${COREUTILS_PREFIX}/libexec/gnubin"; then
-      # Load all the commands of coreutils without the 'g' prefix.
-      export PATH="${COREUTILS_PREFIX}/libexec/gnubin:$PATH"
-    fi
-  fi
-}
-
-#############
 # dircolors #
 #############
 
