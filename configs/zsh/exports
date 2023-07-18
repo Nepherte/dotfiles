@@ -104,12 +104,10 @@ export HISTFILE="${HOME}/.zhistory"
 #############
 
 () {
-  if cmd_exists brew; then
-    local COREUTILS_PREFIX="$(brew --prefix coreutils)"
-
-    if dir_exists "${COREUTILS_PREFIX}/libexec/gnubin"; then
+  if file_exists "${HOME}/.dircolors)"; then
+    if cmd_exists "gdircolors"; then
       # Export LS_COLORS as defined in the dircolors file.
-      eval "$(dircolors ${HOME}/.dircolors)"
+      eval "$(gdircolors ${HOME}/.dircolors)"
     else
       # Fallback to the built-in macOS approach with LSCOLORS.
       export LSCOLORS=ExFxDxdxCxegedabagacad
