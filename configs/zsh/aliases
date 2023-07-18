@@ -6,13 +6,10 @@
 
 () {
   # List long format, use size suffix, directories first, no quotes around names
-  local COREUTILS_PREFIX="$(brew --prefix coreutils)"
-  local GNU_BIN="${COREUTILS_PREFIX}/libexec/gnubin"
-
-  if cmd_exists "brew" && dir_exists "${GNU_BIN}"; then
-    alias ls='ls -h -l --color=tty --group-directories-first --quoting-style=literal'
+  if cmd_exists "gls"; then
+    alias ls="gls -h -l --color=tty --group-directories-first --quoting-style=literal"
   else
-    alias ls='ls -h -l -G'
+    alias ls="ls -h -l -G"
   fi
 }
 
