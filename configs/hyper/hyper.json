@@ -69,7 +69,7 @@
     "webLinksActivationKey": "",
 
     "defaultSSHApp": true,
-    "webGLRenderer": true,
+    "webGLRenderer": false,
     "imageSupport": true,
     "screenReaderMode": false,
 
