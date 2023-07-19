@@ -56,7 +56,7 @@
       "lightWhite": "#E2E6DF"
     },
 
-    "bell": "false",
+    "bell": false,
     "bellSound": null,
     "bellSoundURL": null,
 
