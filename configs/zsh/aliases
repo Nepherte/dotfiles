@@ -57,11 +57,4 @@
   fi
 }
 
-() {
-  # Avoid brew warning about config scripts from pyenv
-  if cmd_exists "pyenv" && cmd_exists "brew"; then
-    alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-  fi
-}
-
 # vim: set syntax=zsh:
