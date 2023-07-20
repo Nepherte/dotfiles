@@ -36,11 +36,11 @@ title "Repositories"
 #tap "homebrew/cask-fonts"
 #tap "homebrew/cask-versions"
 
-#comment "Extensions"
+comment "Extensions"
 #tap "homebrew/aliases
-#tap "homebrew/autoupdate"
+tap "homebrew/autoupdate"
 #tap "homebrew/bundle"
-#tap "homebrew/services"
+tap "homebrew/services"
 
 comment "Third-party"
 tap "bell-sw/liberica"
