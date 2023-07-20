@@ -20,13 +20,6 @@ title "git"
 config git/gitconfig .gitconfig
 
 ##
-## hyper
-##
-title "hyper"
-config hyper/hyper.json .config/Hyper/hyper.json
-config hyper/schema.json .config/Hyper/schema.json
-
-##
 ## ssh
 ##
 title "ssh"
@@ -55,4 +48,4 @@ config zsh/zprofile .zprofile
 config zsh/aliases .zsh/aliases
 config zsh/exports .zsh/exports
 config zsh/options .zsh/options
-conig zsh/theme .zsh/theme
+config zsh/theme .zsh/theme
