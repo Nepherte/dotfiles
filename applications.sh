@@ -28,6 +28,20 @@ fi
 ##
 title "Repositories"
 
+#comment "Formulae"
+#tap "homebrew/core"
+
+#comment "Casks"
+#tap "homebrew/cask"
+#tap "homebrew/cask-fonts"
+#tap "homebrew/cask-versions"
+
+#comment "Extensions"
+#tap "homebrew/aliases
+#tap "homebrew/autoupdate"
+#tap "homebrew/bundle"
+#tap "homebrew/services"
+
 comment "Third-party"
 tap "bell-sw/liberica"
 
