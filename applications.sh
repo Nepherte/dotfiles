@@ -76,7 +76,6 @@ comment "Dependency Management"
 formula "jenv"
 formula "nvm"
 formula "pyenv"
-formula "rbenv"
 
 # Java
 comment "Java"
