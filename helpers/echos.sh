@@ -8,7 +8,7 @@ COL_GREEN="${ESC_SEQ}32;01m"
 COL_MAGENTA="${ESC_SEQ}35;01m"
 COL_CYAN="${ESC_SEQ}36;01m"
 
-# Internal state management. 
+# Internal state management.
 FIRST_HEADER=true
 FIRST_TITLE=true
 FIRST_COMMENT=true
@@ -90,7 +90,7 @@ clear_lines() {
   done
 }
 
-# Prints an inline message, prefixed with [running]. 
+# Prints an inline message, prefixed with [running].
 #
 # Globals:
 #   None
@@ -100,7 +100,7 @@ print_running_inline() {
   printf "%b[running]%b %s" "$COL_MAGENTA" "$COL_RESET" "$1"
 }
 
-# Prints a message, prefixed with [running]. 
+# Prints a message, prefixed with [running].
 #
 # Globals:
 #   None
@@ -111,7 +111,7 @@ print_running() {
   _print_new_line
 }
 
-# Prints a message, prefixed with [ok]. 
+# Prints a message, prefixed with [ok].
 #
 # Globals:
 #   None
@@ -121,7 +121,7 @@ print_ok() {
   printf "%b[ok]%b      %s\n" "$COL_GREEN" "$COL_RESET" "$1"
 }
 
-# Prints a message, prefixed with [error]. 
+# Prints a message, prefixed with [error].
 #
 # Globals:
 #   None

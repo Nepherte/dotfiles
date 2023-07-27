@@ -16,7 +16,7 @@ install_command_line_tools() {
       awk -F'*' '/^ *\\*/ {print \$2}' |
       sed -e 's/^ *Label: //' -e 's/^ *//' |
       sort -V |
-      tail -n1"    
+      tail -n1"
     eval_cmd "Install Command Line Tools" "softwareupdate -i \"\$(${PROD})\""
     rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
   fi
