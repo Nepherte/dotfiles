@@ -15,7 +15,7 @@ ask_for_sudo
 ##
 ## Install Prerequisites
 ##
-title "Prerequisites"
+section "Prerequisites"
 install_command_line_tools
 install_brew
 
@@ -26,7 +26,7 @@ fi
 ##
 ## Repositories
 ##
-title "Repositories"
+section "Repositories"
 
 #comment "Formulae"
 #tap "homebrew/core"
@@ -52,7 +52,7 @@ git "https://github.com/romkatv/powerlevel10k.git" "/opt/oh-my-zsh/custom/themes
 ##
 ## Install packages
 ##
-title "Packages"
+section "Packages"
 
 # Command Line Tools
 comment "Command Line Tools"

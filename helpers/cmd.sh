@@ -70,8 +70,8 @@ ask_for_sudo() {
     clear_lines 2
   fi
 
-  while true; do 
+  while true; do
     # Prevent cached sudo privileges from timing out until the parent script finishes.
-    sudo -n true; sleep 60; kill -0 "$$" || exit; 
+    sudo -n true; sleep 60; kill -0 "$$" || exit;
   done 2>/dev/null &
 }

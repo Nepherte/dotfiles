@@ -40,7 +40,7 @@ install_brew() {
 }
 
 # Adds the specified package repository ("tap") to Homebrew.
-# 
+#
 # Globals:
 #   None
 # Arguments:
