@@ -10,7 +10,7 @@ COL_CYAN="${ESC_SEQ}36;01m"
 
 # Internal state management.
 FIRST_HEADER=true
-FIRST_TITLE=true
+FIRST_SECTION=true
 FIRST_COMMENT=true
 
 # Prints a header (level 1).
@@ -20,7 +20,7 @@ FIRST_COMMENT=true
 # Arguments:
 #   $1 - the header
 header() {
-  FIRST_TITLE="true"
+  FIRST_SECTION="true"
 
   if [ "$FIRST_HEADER" = "true" ]; then
     FIRST_HEADER="false"
@@ -32,22 +32,22 @@ header() {
   _print_new_line
 }
 
-# Prints a title (level 2).
+# Prints a section (level 2).
 #
 # Globals:
 #   None
 # Arguments:
-#   $1 - the title
-title() {
+#   $1 - the section
+section() {
   FIRST_COMMENT="true"
 
-  if [ "$FIRST_TITLE" = "true" ]; then
-    FIRST_TITLE="false"
+  if [ "$FIRST_SECTION" = "true" ]; then
+    FIRST_SECTION="false"
   else
     _print_new_line
   fi
 
-  _print_title "$1"
+  _print_section "$1"
 }
 
 # Prints a comment (level 3).
@@ -154,13 +154,13 @@ _print_header() {
   printf "\n"
 }
 
-# Prints a title.
+# Prints a section.
 #
 # Globals:
 #   None
 # Arguments:
-#   $1 - the title
-_print_title() {
+#   $1 - the section
+_print_section() {
   local title_width=${#1}
 
   printf "$1\n"

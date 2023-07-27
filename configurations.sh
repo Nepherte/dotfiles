@@ -13,5 +13,5 @@ header "Configurations"
 ##
 ## zsh
 ##
-title "zsh"
+section "zsh"
 config zsh/zshrc .zshrc
