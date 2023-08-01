@@ -10,19 +10,19 @@ header "Configurations"
 ##
 ## dircolors
 ##
-title "dircolors"
+section "dircolors"
 config dircolors/dircolors .dircolors
 
 ##
 ## git
 ##
-title "git"
+section "git"
 config git/gitconfig .gitconfig
 
 ##
 ## ssh
 ##
-title "ssh"
+section "ssh"
 config ssh/config .ssh/config
 config ssh/id_anubis.pub .ssh/id_anubis.pub
 config ssh/id_github.pub .ssh/id_github.pub
@@ -34,14 +34,14 @@ config ssh/id_unifi.pub .ssh/id_unifi.pub
 ##
 ## vim
 ##
-title "vim"
+section "vim"
 config vim/vimrc .vimrc
 config vim/vimrc .config/nvim/init.vim
 
 ##
 ## zsh
 ##
-title "zsh"
+section "zsh"
 config zsh/zshrc .zshrc
 config zsh/zprofile .zprofile
 

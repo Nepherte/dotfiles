@@ -30,7 +30,7 @@ git() {
     fi
   fi
 
-  # Make the user the owner of the destination directory if needed. 
+  # Make the user the owner of the destination directory if needed.
   if ! writable "$target_dir"; then
     eval_cmd "Change ownership $target_dir" "sudo chown ${USER}:staff $target_dir"
   fi
