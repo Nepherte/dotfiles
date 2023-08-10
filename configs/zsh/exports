@@ -23,6 +23,17 @@ export LANG=en_US.UTF-8
 
 export HISTFILE="${HOME}/.zhistory"
 
+###################
+# zsh-completions #
+###################
+() {
+  local ZSH_COMPLETIONS="$(brew_home)/share/zsh-completions"
+
+  if dir_exists "${ZSH_COMPLETIONS}"; then
+    FPATH=${ZSH_COMPLETIONS}:$FPATH
+  fi
+}
+
 ############
 # homebrew #
 ############
