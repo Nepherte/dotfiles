@@ -17,6 +17,12 @@ zstyle ':completion:*:descriptions' format "$fg[white]%B-- %d --%b"
 # Display all different types of matches separately (autocompletion settings)
 zstyle ':completion:*' group-name ''
 
+# Pushd and navigate to $HOME if no arg is specified.
+setopt pushdtohome
+
+# Do not print the directory stack.
+setopt pushdsilent
+
 #############
 # oh-my-zsh #
 #############
