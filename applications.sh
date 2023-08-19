@@ -45,6 +45,9 @@ tap "homebrew/services"
 comment "Third-party"
 tap "bell-sw/liberica"
 
+comment "Nepherte"
+tap "nepherte/roon"
+
 comment "Oh-my-zsh"
 git "https://github.com/ohmyzsh/ohmyzsh.git" "/opt/oh-my-zsh"
 git "https://github.com/romkatv/powerlevel10k.git" "/opt/oh-my-zsh/custom/themes/powerlevel10k"
@@ -114,6 +117,7 @@ cask "intellij-idea"
 # Multimedia
 comment "Multimedia"
 cask "roon"
+formula "roon-tui"
 cask "iina"
 
 # Networking

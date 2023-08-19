@@ -57,4 +57,17 @@
   fi
 }
 
+() {
+  # Always run roon-tui from its config folder.
+  if cmd_exists "roon-tui"; then
+    local CONFIG_DIR="${HOME}/.config/roon-tui"
+
+    if ! dir_exists "${GNU_BIN}"; then
+      mkdir -p "${CONFIG_DIR}"
+    fi
+
+    alias roon-tui="pushd ${CONFIG_DIR}; roon-tui; popd"
+  fi
+}
+
 # vim: set syntax=zsh:
