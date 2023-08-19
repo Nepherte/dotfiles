@@ -46,6 +46,7 @@ comment "Third-party"
 tap "bell-sw/liberica"
 
 comment "Nepherte"
+tap "nepherte/ffmpeg"
 tap "nepherte/roon"
 
 comment "Oh-my-zsh"
@@ -116,6 +117,9 @@ cask "intellij-idea"
 
 # Multimedia
 comment "Multimedia"
+cask "ffmpeg"
+cask "ffplay"
+
 cask "roon"
 formula "roon-tui"
 
