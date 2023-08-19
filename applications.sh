@@ -118,7 +118,6 @@ cask "intellij-idea"
 comment "Multimedia"
 cask "roon"
 formula "roon-tui"
-cask "iina"
 
 # Networking
 comment "Networking"
