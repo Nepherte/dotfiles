@@ -62,7 +62,7 @@
   if cmd_exists "roon-tui"; then
     local CONFIG_DIR="${HOME}/.config/roon-tui"
 
-    if ! dir_exists "${GNU_BIN}"; then
+    if ! dir_exists "${CONFIG_DIR}"; then
       mkdir -p "${CONFIG_DIR}"
     fi
 
