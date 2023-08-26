@@ -8,11 +8,6 @@ Host horus.nepherte.com
   User bart
   IdentityFile ~/.ssh/id_horus.pub
 
-Host isis.nepherte.com
-  HostName isis.nepherte.com
-  User bart
-  IdentityFile ~/.ssh/id_isis.pub
-
 Host osiris.nepherte.com
   HostName osiris.nepherte.com
   User admin
