@@ -61,12 +61,13 @@
   # Always run roon-tui from its config folder.
   if cmd_exists "roon-tui"; then
     local CONFIG_DIR="${HOME}/.config/roon-tui"
+    local CONFIG_FILE="${CONFIG_DIR}/config.json"
 
     if ! dir_exists "${CONFIG_DIR}"; then
       mkdir -p "${CONFIG_DIR}"
     fi
 
-    alias roon-tui="pushd ${CONFIG_DIR}; roon-tui; popd"
+    alias roon-tui="roon-tui ${CONFIG_FILE}"
   fi
 }
 
