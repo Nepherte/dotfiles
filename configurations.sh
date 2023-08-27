@@ -20,6 +20,12 @@ section "git"
 config git/gitconfig .gitconfig
 
 ##
+## maven
+##
+section "maven"
+config mvn/settings.xml .m2/settings.xml
+
+##
 ## ssh
 ##
 section "ssh"
