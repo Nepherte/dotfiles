@@ -19,7 +19,7 @@ fi
 
 if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
   # The oh-my-zsh plugins to load.
-  plugins=(jenv nvm)
+  plugins=(jenv nvm pyenv)
 
   # Load oh-my-zsh.
   source "$ZSH/oh-my-zsh.sh"

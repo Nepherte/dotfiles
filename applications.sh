@@ -79,6 +79,7 @@ cask "rectangle-pro"
 comment "Dependency Management"
 formula "jenv"
 formula "nvm"
+formula "pyenv"
 
 # Java
 comment "Java"
