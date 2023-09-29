@@ -67,7 +67,7 @@
       mkdir -p "${CONFIG_DIR}"
     fi
 
-    alias roon-tui="roon-tui ${CONFIG_FILE}"
+    alias roon-tui="roon-tui -c ${CONFIG_FILE}"
   fi
 }
 
