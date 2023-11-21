@@ -83,7 +83,7 @@ comment "Java"
 cask "liberica-jdk8-full"
 cask "liberica-jdk11-full"
 cask "liberica-jdk17-full"
-cask "liberica-jdk20-full"
+cask "liberica-jdk21-full"
 
 # Office
 comment "Office"
@@ -115,11 +115,9 @@ cask "intellij-idea"
 # Multimedia
 comment "Multimedia"
 cask "roon"
-cask "iina"
 
 # Networking
 comment "Networking"
-cask "mullvadvpn"
 cask "transmission"
 cask "transmit"
 
