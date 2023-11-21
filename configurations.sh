@@ -20,6 +20,12 @@ section "git"
 config git/gitconfig .gitconfig
 
 ##
+## Mercurial
+##
+section "mercurial"
+config hg/hgrc .hgrc
+
+##
 ## ssh
 ##
 section "ssh"
