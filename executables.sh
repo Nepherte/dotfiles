@@ -6,7 +6,7 @@
 DOTFILES="${0:A:h}"
 
 . "${DOTFILES}/helpers/echos.sh"
-. "${DOTFILES}/helpers/config.sh"
+. "${DOTFILES}/helpers/executable.sh"
 
 header "Executables"
 
@@ -14,4 +14,4 @@ header "Executables"
 ## IntelliJ
 ##
 section "IntelliJ"
-config intellij/idea idea
+executable intellij/idea idea
