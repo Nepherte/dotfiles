@@ -126,15 +126,15 @@ export HISTFILE="${HOME}/.zhistory"
   fi
 }
 
-############
-# IntelliJ #
-############
+###########
+# scripts #
+###########
 
 () {
-  local INTELLIJ_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
+  local SCRIPTS_HOME="${HOME}/.bin"
 
-  if dir_exists "${INTELLIJ_HOME}"; then
-    export PATH="${INTELLIJ_HOME}:${PATH}"
+  if dir_exists "${SCRIPTS_HOME}"; then
+    export PATH="${SCRIPTS_HOME}:${PATH}"
   fi
 }
 
