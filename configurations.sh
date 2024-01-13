@@ -18,6 +18,7 @@ config dircolors/dircolors .dircolors
 ##
 section "git"
 config git/gitconfig .gitconfig
+config git/allowed_signers .config/git/allowed_signers
 
 ##
 ## maven
