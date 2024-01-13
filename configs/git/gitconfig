@@ -6,6 +6,9 @@
 [init]
 	defaultBranch = main
 
+[log]
+  showSignature = true
+
 [commit]
   gpgsign = true
 
