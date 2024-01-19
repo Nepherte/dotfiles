@@ -15,7 +15,7 @@
     </server>
 
     <!-- Nepherte -->
-     <server>
+    <server>
       <id>nepherte-releases</id>
       <username>bart</username>
       <password>{brvqYiSsTIAHCKEr3RK7oXDyReaucI7kGjYmKnQ7KXPjBnIOQSa46QFl3b61b/QHO1wSz4IYcookkVVfoG1K+yLCCVrYOBz5y9r43QZxg1c1lhse9mD5dgSJ0Q1q0eXb}</password>
@@ -55,6 +55,12 @@
           <url>https://mvn.nepherte.com/archetypes</url>
         </repository>
       </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>luciad-central</id>
+          <url>https://artifactory.luciad.com:443/artifactory/services_maven</url>
+        </pluginRepository>
+      </pluginRepositories>
     </profile>
 
     <profile>
