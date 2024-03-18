@@ -15,7 +15,7 @@ Host osiris.nepherte.com
 
 Host gateway.nepherte.com
   HostName gateway.nepherte.com
-  User admin
+  User root
   IdentityFile ~/.ssh/id_unifi.pub
 
 Host github.com
