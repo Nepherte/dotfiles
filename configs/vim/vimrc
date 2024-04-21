@@ -1,0 +1,57 @@
+" Basic settings
+set nocompatible             " Turn off vi compatible mode
+set showmode                 " Display mode at the bottom of the screen
+set showmatch                " Display matching brackets (),{} abd []
+set showcmd                  " Display incomplete commands at the bottom
+set ruler                    " Display current cursor position
+set mouse=a                  " Enable mouse usage
+set wildmenu                 " Enable menu at the bottom of the screen
+set wildmode=list:longest,full
+set suffixes=.backup,~,.swp,.aux,.dvi,.toc
+set fileformats=unix
+
+set modeline                 " Allow setting per-file variables
+set modelines=1              " Only read the last line of a file
+
+" Backup settings
+set nobackup                 " Do not keep a backup file
+set backupdir=/tmp           " Set backup directory (only if backup is enabled)
+
+" Wrap settings
+set wrap                     " Wrap words
+set textwidth=0
+set lbr                      " Set Line break
+set display=lastline         " Don't display @ with long paragraphs
+
+" Tab and indent settings
+set smarttab autoindent      " Auto indent on new line
+set expandtab                " Insert spaces instead of tab chararacter
+set shiftwidth=2             " Set shift width for each indent
+set tabstop=2                " Set number of spaces for a tab
+
+" Search settings
+set hlsearch                 " Highlight all search results
+set ignorecase               " Case-insensitive search
+set smartcase                " Upper-case sensitive search
+set incsearch                " Display the match for a search while typing
+
+" Special characters settings
+set list                     " Show special characters
+set listchars=tab:>-,trail:~ " Only show tabs and trailing whitespaces
+
+" Syntax highlighting
+syntax on                    " Enable syntax highlighting
+set t_Co=16                  " Use 256 colors
+
+" Fold settings
+set foldmethod=indent        " Smart fold detection with indents
+set foldminlines=0           " No minimum lines required to fold
+
+" Plug-in settings
+filetype on                  " Enable file type detection
+filetype plugin on           " Include specific file types
+filetype indent on           " Include indent file
+
+" Toggle auto-indenting for code paste (safe paste)
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>

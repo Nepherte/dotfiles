@@ -1,0 +1,76 @@
+#!/usr/bin/env zsh
+
+. "${DOTFILES}/helpers/cmd.sh"
+. "${DOTFILES}/helpers/io.sh"
+. "${DOTFILES}/helpers/os.sh"
+
+() {
+  if cmd_exists "brew"; then
+    local COREUTILS_PREFIX="$(brew --prefix coreutils)"
+    local GNU_BIN="${COREUTILS_PREFIX}/libexec/gnubin"
+
+    # Alias often used gnu-style commands to prevent brew warning
+    if dir_exists "${GNU_BIN}"; then
+      alias base64="gbase64"
+      alias cat="gcat"
+      alias chmod="gchmod"
+      alias chown="gchown"
+      alias cp="gcp"
+      alias cut="gcut"
+      alias dircolors="gdircolors"
+      alias dirname="gdirname"
+      alias du="gdu"
+      alias echo="gecho"
+      alias groups="ggroups"
+      alias kill="gkill"
+      alias ln="gln"
+      alias ls="gls"
+      alias md5sum="gmd5sum"
+      alias mkdir="gmkdir"
+      alias mv="gmv"
+      alias pwd="gpwd"
+      alias rm="grm"
+      alias rmdir="grmdir"
+      alias sha1sum="gsha1sum"
+      alias sha256sum="gsha256sum"
+      alias sha512sum="gsha512sum"
+      alias sort="gsort"
+      alias tail="gtail"
+      alias tee="gtee"
+      alias test="gtest"
+      alias touch="gtouch"
+      alias uname="guname"
+      alias uptime="guptime"
+      alias users="gusers"
+      alias wc="gwc"
+      alias whoami="gwhoami"
+    fi
+  fi
+}
+
+() {
+  # List long format, use size suffix, directories first, no quotes around names
+  if cmd_exists "gls"; then
+    alias ls="gls -h -l --color=tty --group-directories-first --quoting-style=literal"
+  else
+    alias ls="ls -h -l -G"
+  fi
+}
+
+() {
+  # Always run roon-tui from its config folder.
+  if cmd_exists "roon-tui"; then
+    local APP_DIR="${HOME}/.config/roon-tui"
+
+    local CONFIG_FILE="${APP_DIR}/config.json"
+    local LOG_FILE="${APP_DIR}/roon-tui.log"
+
+    if ! dir_exists "${APP_DIR}"; then
+      mkdir -p "${APP_DIR}"
+    fi
+
+    alias roon-tui="roon-tui -c ${CONFIG_FILE} -l ${LOG_FILE}"
+  fi
+}
+
+# vim: set syntax=zsh:

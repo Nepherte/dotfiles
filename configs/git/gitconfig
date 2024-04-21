@@ -1,0 +1,12 @@
+[user]
+name = Bart Verhoeven
+email = nepherte@pm.me
+
+[init]
+defaultBranch = main
+
+[log]
+showSignature = true
+
+[include]
+path = ~/.git/includes/1password.inc
