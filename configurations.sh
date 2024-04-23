@@ -20,8 +20,8 @@ section "git"
 config git/gitconfig .gitconfig
 config git/allowed_signers .git/allowed_signers
 
-config git/1password.inc .git/includes/1password.inc
-config git/intellij.inc .git/includes/intellij.inc
+config git/includes/1password.inc .git/includes/1password.inc
+config git/includes/intellij.inc .git/includes/intellij.inc
 
 ##
 ## maven
