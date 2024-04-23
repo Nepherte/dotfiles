@@ -1,0 +1,32 @@
+#!/usr/bin/env zsh
+
+. "${DOTFILES}/helpers/io.sh"
+
+#######
+# zsh #
+#######
+
+if [[ -v LS_COLORS ]]; then
+  # Tell zsh which colors to use for command completion.
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+fi
+
+# Pretty print the descriptions of the autocompletion groups.
+zstyle ':completion:*:descriptions' format "$fg[white]%B-- %d --%b"
+
+# Display all different types of matches separately (autocompletion settings)
+zstyle ':completion:*' group-name ''
+
+#############
+# oh-my-zsh #
+#############
+
+if file_exists "${ZSH}/oh-my-zsh.sh"; then
+  # Automatically update oh-my-zsh when a new version is available.
+  zstyle ':omz:update' mode auto
+
+  # Check for oh-my-zsh updates every 7 days.
+  zstyle ':omz:update' frequency 7
+fi
+
+# vim: set syntax=zsh:

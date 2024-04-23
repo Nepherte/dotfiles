@@ -1,0 +1,147 @@
+#!/usr/bin/env zsh
+
+############
+# dotfiles #
+############
+
+export DOTFILES=~/.dotfiles;
+
+. "${DOTFILES}/helpers/brew.sh"
+. "${DOTFILES}/helpers/cmd.sh"
+. "${DOTFILES}/helpers/io.sh"
+
+##########
+# locale #
+##########
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+#######
+# zsh #
+#######
+
+export HISTFILE="${HOME}/.zhistory"
+
+###################
+# zsh-completions #
+###################
+() {
+  local ZSH_COMPLETIONS="$(brew_home)/share/zsh-completions"
+
+  if dir_exists "${ZSH_COMPLETIONS}"; then
+    FPATH=${ZSH_COMPLETIONS}:$FPATH
+  fi
+}
+
+############
+# homebrew #
+############
+
+() {
+  local BREW_PREFIX="$(brew_home)"
+
+  if cmd_exists "${BREW_PREFIX}/bin/brew"; then
+    # Set up brew in the current shell environment.
+    eval "$(${BREW_PREFIX}/bin/brew shellenv)"
+
+    # Hide the beer mug emoji after finishing a build in brew.
+    export HOMEBREW_NO_EMOJI=1
+
+    # Automatically remove unused dependencies in brew.
+    export HOMEBREW_AUTOREMOVE=1
+
+    # Don't generate a lock file for brew bundle.
+    export HOMEBREW_BUNDLE_NO_LOCK=1
+
+    # Use vim when editing brew formulae.
+    export HOMEBREW_EDITOR=vim
+
+    # Do not print brew's behaviour with environment variables.
+    export HOMEBREW_NO_ENV_HINTS=1
+
+    if cmd_exists "ruby-build"; then
+      # Use openssl from brew when compiling ruby.
+      export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+    fi
+  fi
+}
+
+#############
+# oh-my-zsh #
+#############
+
+() {
+  if file_exists "/opt/oh-my-zsh/oh-my-zsh.sh"; then
+    # Path to the oh-my-zsh installation.
+    export ZSH="/opt/oh-my-zsh"
+
+    # Path to the oh-my-zsh custom folder.
+    export ZSH_CUSTOM="${ZSH}/custom"
+
+    # Path to the oh-my-zsh cache.
+    export ZSH_CACHE_DIR="${HOME}/.cache/oh-my-zsh"
+
+    # Path to the completion cache file.
+    export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/zcompdump"
+
+    # Do not manage the title of the terminal.
+    export DISABLE_AUTO_TITLE=false
+
+    # Set name of the oh-my-zsh theme to load.
+    export ZSH_THEME="powerlevel10k/powerlevel10k"
+
+    # Do not let oh-my-zsh replace ls with an alias.
+    export DISABLE_LS_COLORS="true"
+  fi
+}
+
+##########
+# python #
+##########
+() {
+  if cmd_exists pyenv; then
+    # Suppress warnings on pyenv regarding non-interactive shells.
+    export ZSH_PYENV_QUIET=true
+  elif cmd_exists python3; then
+    # Add binaries (installed via pip) to the path.
+    local PYTHON_VERSION=$(python3 --version | cut -d" " -f2)
+    export PATH="${HOME}/Library/Python/${PYTHON_VERSION%.*}/bin:${PATH}"
+  fi
+}
+
+#############
+# dircolors #
+#############
+
+() {
+  if file_exists "${HOME}/.dircolors"; then
+    if cmd_exists "gdircolors"; then
+      # Export LS_COLORS as defined in the dircolors file.
+      eval "$(gdircolors ${HOME}/.dircolors)"
+    else
+      # Fallback to the built-in macOS approach with LSCOLORS.
+      export LSCOLORS=ExFxDxdxCxegedabagacad
+    fi
+  fi
+}
+
+############
+# IntelliJ #
+############
+
+() {
+  local INTELLIJ_HOME="/Applications/IntelliJ IDEA.app/Contents/MacOS"
+
+  if dir_exists "${INTELLIJ_HOME}"; then
+    export PATH="${INTELLIJ_HOME}:${PATH}"
+  fi
+}
+
+#############
+# 1password #
+#############
+
+export SSH_AUTH_SOCK="${HOME}/.1password/agent.sock"
+
+# vim: set syntax=zsh:

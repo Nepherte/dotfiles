@@ -1,0 +1,5 @@
+[ui]
+username = Bart Verhoeven <bart.verhoeven@hexagon.com>
+
+[extensions]
+hgext.kerberos = ~/.bin/authentication.py

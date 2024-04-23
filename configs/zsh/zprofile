@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+if [[ -r ~/.zsh/exports ]]; then
+  source ~/.zsh/exports
+fi
+
+# vim: set syntax=zsh:

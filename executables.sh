@@ -11,6 +11,12 @@ DOTFILES="${0:A:h}"
 header "Executables"
 
 ##
+## Mercurial
+##
+section "Mercurial"
+executable hg/authentication.py authentication.py
+
+##
 ## IntelliJ
 ##
 section "IntelliJ"
