@@ -1,5 +1,5 @@
 [user]
-signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC2fCcvC2F+m/sbPdA1Derlb+m6uXOZONZliMDHeC8Cb
+signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHoO/i9i/WWcPIzEroeXYfShhT0pciLZS/eeBi+jANZN
 
 [commit]
 gpgsign = true
