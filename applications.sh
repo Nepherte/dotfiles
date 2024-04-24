@@ -75,6 +75,7 @@ cask "liberica-jdk8-full"
 cask "liberica-jdk11-full"
 cask "liberica-jdk17-full"
 cask "liberica-jdk21-full"
+cask "liberica-jdk22-full"
 
 # Office
 comment "Office"
