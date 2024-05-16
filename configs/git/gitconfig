@@ -5,6 +5,9 @@ email = bart.verhoeven@hexagon.com
 [init]
 defaultBranch = main
 
+[core]
+autocrlf = input
+
 [pull]
 rebase = true
 
