@@ -5,6 +5,9 @@ email = nepherte@pm.me
 [init]
 defaultBranch = main
 
+[core]
+autocrlf = input
+
 [log]
 showSignature = true
 
