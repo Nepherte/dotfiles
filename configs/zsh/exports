@@ -39,12 +39,7 @@ export HISTFILE="${HOME}/.zhistory"
 ############
 
 () {
-  local BREW_PREFIX="$(brew_home)"
-
-  if cmd_exists "${BREW_PREFIX}/bin/brew"; then
-    # Set up brew in the current shell environment.
-    eval "$(${BREW_PREFIX}/bin/brew shellenv)"
-
+  if cmd_exists "$(brew_bin)"; then
     # Hide the beer mug emoji after finishing a build in brew.
     export HOMEBREW_NO_EMOJI=1
 
@@ -59,7 +54,7 @@ export HISTFILE="${HOME}/.zhistory"
 
     if cmd_exists "ruby-build"; then
       # Use openssl from brew when compiling ruby.
-      export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+      export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$($(brew_bin) --prefix openssl@1.1)"
     fi
   fi
 }
@@ -113,9 +108,11 @@ export HISTFILE="${HOME}/.zhistory"
 
 () {
   if file_exists "${HOME}/.dircolors"; then
-    if cmd_exists "gdircolors"; then
+    local GDIRCOLORS="$($(brew_bin) --prefix coreutils)/libexec/gnubin/dircolors"
+
+    if cmd_exists "${GDIRCOLORS}"; then
       # Export LS_COLORS as defined in the dircolors file.
-      eval "$(gdircolors ${HOME}/.dircolors)"
+      eval "$(${GDIRCOLORS} ${HOME}/.dircolors)"
     else
       # Fallback to the built-in macOS approach with LSCOLORS.
       export LSCOLORS=ExFxDxdxCxegedabagacad
