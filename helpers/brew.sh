@@ -20,6 +20,16 @@ brew_home() {
   fi
 }
 
+# Returns the expected location of Homebrew.
+#
+# Globals:
+#   None
+# Arguments:
+#   None
+brew_bin() {
+  echo "$(brew_home)/bin/brew"
+}
+
 # Installs Homebrew (if missing) and updates it to the latest version. Assumes
 # that the Command Line Tools are installed. See install_command_line_tools.sh
 #

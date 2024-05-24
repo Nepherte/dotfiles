@@ -1,6 +1,19 @@
 #!/usr/bin/env zsh
 
+. "${DOTFILES}/helpers/brew.sh"
+. "${DOTFILES}/helpers/cmd.sh"
 . "${DOTFILES}/helpers/io.sh"
+
+############
+# homebrew #
+############
+
+() {
+  if cmd_exists "$(brew_bin)"; then
+    # Set up brew in the current shell environment.
+    eval "$($(brew_bin) shellenv)"
+  fi
+}
 
 #############
 # oh-my-zsh #
