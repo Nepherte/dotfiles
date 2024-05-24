@@ -4,6 +4,10 @@
 . "${DOTFILES}/helpers/io.sh"
 . "${DOTFILES}/helpers/os.sh"
 
+#############
+# coreutils #
+#############
+
 () {
   if cmd_exists "$(brew_bin)"; then
     local COREUTILS_PREFIX="$($(brew_bin) --prefix coreutils)"
@@ -54,6 +58,10 @@
     fi
   fi
 }
+
+############
+# roon-tui #
+############
 
 () {
   # Always run roon-tui from its config folder.
