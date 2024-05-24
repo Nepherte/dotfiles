@@ -2,7 +2,6 @@
 
 . "${DOTFILES}/helpers/cmd.sh"
 . "${DOTFILES}/helpers/io.sh"
-. "${DOTFILES}/helpers/os.sh"
 
 #############
 # coreutils #
