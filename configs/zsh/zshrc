@@ -23,9 +23,10 @@ if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
 
   # Load oh-my-zsh.
   source "$ZSH/oh-my-zsh.sh"
+fi
 
-  # Load powerlevel10 theme.
-  [[ ! -r ~/.zsh/theme ]] || source ~/.zsh/theme
+if [[ -r ~/.zsh/theme ]]; then
+  source ~/.zsh/theme
 fi
 
 # vim: set syntax=zsh:
