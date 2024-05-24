@@ -26,6 +26,7 @@ export HISTFILE="${HOME}/.zhistory"
 ###################
 # zsh-completions #
 ###################
+
 () {
   local ZSH_COMPLETIONS="$(brew_home)/share/zsh-completions"
 
@@ -98,6 +99,7 @@ export HISTFILE="${HOME}/.zhistory"
 ##########
 # python #
 ##########
+
 () {
   if cmd_exists pyenv; then
     # Suppress warnings on pyenv regarding non-interactive shells.
