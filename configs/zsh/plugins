@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+. "${DOTFILES}/helpers/io.sh"
+
+#############
+# oh-my-zsh #
+#############
+
+() {
+  if file_exists "${ZSH}/oh-my-zsh.sh"; then
+    plugins=(jenv nvm pyenv)
+    source "$ZSH/oh-my-zsh.sh"
+  fi
+}
+
+# vim: set syntax=zsh:

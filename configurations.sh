@@ -55,4 +55,5 @@ config zsh/zprofile .zprofile
 config zsh/aliases .zsh/aliases
 config zsh/exports .zsh/exports
 config zsh/options .zsh/options
+config zsh/plugins .zsh/plugins
 config zsh/theme .zsh/theme
