@@ -39,6 +39,7 @@ tap "bell-sw/liberica"
 
 comment "Oh-my-zsh"
 git "https://github.com/ohmyzsh/ohmyzsh.git" "/opt/oh-my-zsh"
+git "https://github.com/qoomon/zsh-lazyload.git" "/opt/oh-my-zsh/custom/plugins/zsh-lazyload"
 git "https://github.com/romkatv/powerlevel10k.git" "/opt/oh-my-zsh/custom/themes/powerlevel10k"
 
 ##

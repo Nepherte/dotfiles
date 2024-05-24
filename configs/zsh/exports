@@ -88,6 +88,18 @@ export HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+#######
+# nvm #
+#######
+
+() {
+  local BREW_NVM_PREFIX="$($(brew_bin) --prefix nvm)"
+
+  if dir_exists "${BREW_NVM_PREFIX}"; then
+    export NVM_DIR=${HOME}/.nvm
+  fi
+}
+
 ##########
 # python #
 ##########
