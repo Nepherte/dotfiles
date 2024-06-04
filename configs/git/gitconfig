@@ -8,6 +8,9 @@ defaultBranch = main
 [core]
 autocrlf = input
 
+[log]
+showSignature = true
+
 [pull]
 rebase = true
 
