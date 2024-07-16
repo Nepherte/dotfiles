@@ -77,7 +77,7 @@
     </profile>
 
     <profile>
-      <id>hexagon</id>
+      <id>luciad</id>
 
       <activation>
         <activeByDefault>true</activeByDefault>
