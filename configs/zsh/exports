@@ -104,17 +104,13 @@ export HISTFILE="${HOME}/.zhistory"
 }
 
 ##########
-# python #
+# pyenv #
 ##########
 
 () {
   if cmd_exists pyenv; then
     # Suppress warnings on pyenv regarding non-interactive shells.
     export ZSH_PYENV_QUIET=true
-  elif cmd_exists python3; then
-    # Add binaries (installed via pip) to the path.
-    local PYTHON_VERSION=$(python3 --version | cut -d" " -f2)
-    export PATH="${HOME}/Library/Python/${PYTHON_VERSION%.*}/bin:${PATH}"
   fi
 }
 
