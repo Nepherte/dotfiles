@@ -8,53 +8,51 @@
 #############
 
 () {
-  if cmd_exists "$(brew_bin)"; then
-    local COREUTILS_PREFIX="$($(brew_bin) --prefix coreutils)"
-    local GNU_BIN="${COREUTILS_PREFIX}/libexec/gnubin"
+  local COREUTILS_PREFIX="$(brew_prefix coreutils)"
+  local GNU_BIN="${COREUTILS_PREFIX}/libexec/gnubin"
 
-    # Alias often used gnu-style commands to prevent brew warning
-    if dir_exists "${GNU_BIN}"; then
-      alias base64="${GNU_BIN}/base64"
-      alias cat="${GNU_BIN}/cat"
-      alias chmod="${GNU_BIN}/chmod"
-      alias chown="${GNU_BIN}/chown"
-      alias cp="${GNU_BIN}/cp"
-      alias cut="${GNU_BIN}/cut"
-      alias dircolors="${GNU_BIN}/dircolors"
-      alias dirname="${GNU_BIN}/dirname"
-      alias du="${GNU_BIN}/du"
-      alias echo="${GNU_BIN}/echo"
-      alias groups="${GNU_BIN}/groups"
-      alias kill="${GNU_BIN}/kill"
-      alias ln="${GNU_BIN}/ln"
-      alias md5sum="${GNU_BIN}/md5sum"
-      alias mkdir="${GNU_BIN}/mkdir"
-      alias mv="${GNU_BIN}/mv"
-      alias pwd="${GNU_BIN}/pwd"
-      alias rm="${GNU_BIN}/rm"
-      alias rmdir="${GNU_BIN}/rmdir"
-      alias sha1sum="${GNU_BIN}/sha1sum"
-      alias sha256sum="${GNU_BIN}/sha256sum"
-      alias sha512sum="${GNU_BIN}/sha512sum"
-      alias sort="${GNU_BIN}/sort"
-      alias tail="${GNU_BIN}/tail"
-      alias tee="${GNU_BIN}/tee"
-      alias test="${GNU_BIN}/test"
-      alias touch="${GNU_BIN}/touch"
-      alias uname="${GNU_BIN}/uname"
-      alias uptime="${GNU_BIN}/uptime"
-      alias users="${GNU_BIN}/users"
-      alias wc="${GNU_BIN}/wc"
-      alias whoami="${GNU_BIN}/whoami"
-    fi
+  # Alias often used gnu-style commands to prevent brew warning
+  if dir_exists "${GNU_BIN}"; then
+    alias base64="${GNU_BIN}/base64"
+    alias cat="${GNU_BIN}/cat"
+    alias chmod="${GNU_BIN}/chmod"
+    alias chown="${GNU_BIN}/chown"
+    alias cp="${GNU_BIN}/cp"
+    alias cut="${GNU_BIN}/cut"
+    alias dircolors="${GNU_BIN}/dircolors"
+    alias dirname="${GNU_BIN}/dirname"
+    alias du="${GNU_BIN}/du"
+    alias echo="${GNU_BIN}/echo"
+    alias groups="${GNU_BIN}/groups"
+    alias kill="${GNU_BIN}/kill"
+    alias ln="${GNU_BIN}/ln"
+    alias md5sum="${GNU_BIN}/md5sum"
+    alias mkdir="${GNU_BIN}/mkdir"
+    alias mv="${GNU_BIN}/mv"
+    alias pwd="${GNU_BIN}/pwd"
+    alias rm="${GNU_BIN}/rm"
+    alias rmdir="${GNU_BIN}/rmdir"
+    alias sha1sum="${GNU_BIN}/sha1sum"
+    alias sha256sum="${GNU_BIN}/sha256sum"
+    alias sha512sum="${GNU_BIN}/sha512sum"
+    alias sort="${GNU_BIN}/sort"
+    alias tail="${GNU_BIN}/tail"
+    alias tee="${GNU_BIN}/tee"
+    alias test="${GNU_BIN}/test"
+    alias touch="${GNU_BIN}/touch"
+    alias uname="${GNU_BIN}/uname"
+    alias uptime="${GNU_BIN}/uptime"
+    alias users="${GNU_BIN}/users"
+    alias wc="${GNU_BIN}/wc"
+    alias whoami="${GNU_BIN}/whoami"
+  fi
 
-    # Size units, colored output, long format
-    if dir_exists "${GNU_BIN}"; then
-      # + directories first, no quotes around names
-      alias ls="${GNU_BIN}/ls -h -l --color=tty --group-directories-first --quoting-style=literal"
-    else
-      alias ls="ls -h -l -G"
-    fi
+  # Size units, colored output, long format
+  if dir_exists "${GNU_BIN}"; then
+    # + directories first, no quotes around names
+    alias ls="${GNU_BIN}/ls -h -l --color=tty --group-directories-first --quoting-style=literal"
+  else
+    alias ls="ls -h -l -G"
   fi
 }
 

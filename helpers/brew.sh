@@ -4,20 +4,34 @@
 . "${DOTFILES:-~/.dotfiles}/helpers/echos.sh"
 . "${DOTFILES:-~/.dotfiles}/helpers/os.sh"
 
-# Returns the expected location of Homebrew.
+# Returns the location of Homebrew or one of its formulae.
+#
+# When no argument is provided, the location (actual or expected) of Homebrew is
+# returned. The returned value is as per the official docs (ie. brew shellenv).
+#
+# When a formula is provided as an argument, the location (actual or expected)
+# of that formula is returned. See also paragraph above.
 #
 # Globals:
-#   None
+#   $HOMEBREW_PREFIX - the homebrew prefix (optional)
 # Arguments:
-#   None
-brew_home() {
-  if cmd_exists brew; then
-    echo "$(brew --prefix)";
+#   $1 - the formula (optional)
+brew_prefix() {
+  local brew_prefix;
+
+  if [[ -v HOMEBREW_PREFIX ]]; then
+    brew_prefix="${HOMEBREW_PREFIX}";
   elif on_arm; then
-    echo "/opt/homebrew"
+    brew_prefix="/opt/homebrew"
   else
-    echo "/usr/local"
+    brew_prefix="/usr/local"
   fi
+
+  if [[ -v 1 ]]; then
+    brew_prefix="${brew_prefix}/opt/${1}"
+  fi
+
+  echo "${brew_prefix}"
 }
 
 # Returns the expected location of Homebrew.
@@ -38,7 +52,7 @@ brew_bin() {
 # Arguments:
 #   None
 install_brew() {
-  local brew_prefix="$(brew_home)"
+  local brew_prefix="$(brew_prefix)"
 
   if ! cmd_exists "brew"; then
     curl -s -o /tmp/homebrew-install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh

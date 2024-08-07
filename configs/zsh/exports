@@ -28,7 +28,7 @@ export HISTFILE="${HOME}/.zhistory"
 ###################
 
 () {
-  local ZSH_COMPLETIONS="$(brew_home)/share/zsh-completions"
+  local ZSH_COMPLETIONS="$(brew_prefix)/share/zsh-completions"
 
   if dir_exists "${ZSH_COMPLETIONS}"; then
     FPATH=${ZSH_COMPLETIONS}:$FPATH
@@ -40,7 +40,7 @@ export HISTFILE="${HOME}/.zhistory"
 ############
 
 () {
-  if cmd_exists "$(brew_bin)"; then
+  if dir_exists "$(brew_prefix)"; then
     # Hide the beer mug emoji after finishing a build in brew.
     export HOMEBREW_NO_EMOJI=1
 
@@ -89,7 +89,7 @@ export HISTFILE="${HOME}/.zhistory"
 #######
 
 () {
-  local BREW_NVM_PREFIX="$($(brew_bin) --prefix nvm)"
+  local BREW_NVM_PREFIX="$(brew_prefix nvm)"
 
   if dir_exists "${BREW_NVM_PREFIX}"; then
     export NVM_DIR=${HOME}/.nvm
@@ -117,7 +117,7 @@ export HISTFILE="${HOME}/.zhistory"
 
 () {
   if file_exists "${HOME}/.dircolors"; then
-    local GDIRCOLORS="$($(brew_bin) --prefix coreutils)/libexec/gnubin/dircolors"
+    local GDIRCOLORS="$(brew_prefix coreutils)/libexec/gnubin/dircolors"
 
     if cmd_exists "${GDIRCOLORS}"; then
       # Export LS_COLORS as defined in the dircolors file.
