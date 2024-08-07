@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+. "${DOTFILES}/helpers/brew.sh"
 . "${DOTFILES}/helpers/cmd.sh"
 . "${DOTFILES}/helpers/io.sh"
 
