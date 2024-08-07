@@ -76,4 +76,21 @@
   fi
 }
 
+############
+# lazyload #
+#############
+
+() {
+  local NVM_BIN="$(brew_prefix nvm)/nvm.sh"
+  local JENV_BIN="$(brew_prefix jenv)/bin/jenv"
+
+  if file_exists "${NVM_BIN}"; then
+    lazyload nvm node npm npx -- "source ${NVM_BIN}"
+  fi
+
+  if file_exists "${JENV_BIN}"; then
+    lazyload jenv java mvn -- "eval \"\$(${JENV_BIN} init -)\""
+  fi
+}
+
 # vim: set syntax=zsh:
