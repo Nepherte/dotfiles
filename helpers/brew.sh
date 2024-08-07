@@ -11,8 +11,8 @@
 # Arguments:
 #   None
 brew_home() {
-  if cmd_exists brew; then
-    echo "$(brew --prefix)";
+  if [[ -v HOMEBREW_PREFIX ]]; then
+    echo "${HOMEBREW_PREFIX}";
   elif on_arm; then
     echo "/opt/homebrew"
   else
