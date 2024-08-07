@@ -52,6 +52,9 @@ export HISTFILE="${HOME}/.zhistory"
 
     # Do not print brew's behaviour with environment variables.
     export HOMEBREW_NO_ENV_HINTS=1
+
+    # Set up brew in the current shell environment.
+    eval "$("$(brew_prefix)/bin/brew" shellenv)"
   fi
 }
 
@@ -81,6 +84,10 @@ export HISTFILE="${HOME}/.zhistory"
 
     # Do not let oh-my-zsh replace ls with an alias.
     export DISABLE_LS_COLORS="true"
+
+    # Load oh-my-zsh with plugins.
+    plugins=(httpie zsh-lazyload)
+    source "$ZSH/oh-my-zsh.sh"
   fi
 }
 

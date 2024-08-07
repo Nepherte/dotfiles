@@ -17,10 +17,6 @@ if [[ -r ~/.zsh/options ]]; then
   source ~/.zsh/options
 fi
 
-if [[ -r ~/.zsh/plugins ]]; then
-  source ~/.zsh/plugins
-fi
-
 if [[ -r ~/.zsh/theme ]]; then
   source ~/.zsh/theme
 fi
