@@ -4,7 +4,7 @@
 # dotfiles #
 ############
 
-export DOTFILES=~/.dotfiles;
+DOTFILES=~/.dotfiles;
 
 . "${DOTFILES}/helpers/brew.sh"
 . "${DOTFILES}/helpers/cmd.sh"
@@ -21,7 +21,7 @@ export LANG=en_US.UTF-8
 # zsh #
 #######
 
-export HISTFILE="${HOME}/.zhistory"
+HISTFILE="${HOME}/.zhistory"
 
 ###################
 # zsh-completions #
