@@ -7,7 +7,6 @@
 DOTFILES=~/.dotfiles;
 
 . "${DOTFILES}/helpers/brew.sh"
-. "${DOTFILES}/helpers/cmd.sh"
 . "${DOTFILES}/helpers/io.sh"
 
 ##########
@@ -106,7 +105,7 @@ HISTFILE="${HOME}/.zhistory"
 ##########
 
 () {
-  if cmd_exists pyenv; then
+  if dir_exists "$(brew_prefix pyenv)"; then
     # Suppress warnings on pyenv regarding non-interactive shells.
     export ZSH_PYENV_QUIET=true
   fi
