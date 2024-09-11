@@ -106,4 +106,26 @@
   fi
 }
 
+###########
+# mullvad #
+###########
+
+() {
+  # The mullvad installer puts symlink in /usr/local/bin
+  if file_exists "/usr/local/bin/mullvad"; then
+    alias mullvad="/usr/local/bin/mullvad"
+  fi
+}
+
+##########
+# docker #
+##########
+
+() {
+  # The docker installer puts symlink in /usr/local/bin
+  if file_exists "/usr/local/bin/docker"; then
+    alias docker="/usr/local/bin/docker"
+  fi
+}
+
 # vim: set syntax=zsh:
