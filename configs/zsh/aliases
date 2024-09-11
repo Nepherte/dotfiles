@@ -82,25 +82,27 @@
 #############
 
 () {
-  local NVM_BIN="$(brew_prefix nvm)/nvm.sh"
-  local NVM_CMDS=(nvm node npm npx)
+  if cmd_exists lazyload; then
+    local NVM_BIN="$(brew_prefix nvm)/nvm.sh"
+    local NVM_CMDS=(nvm node npm npx)
 
-  local JENV_BIN="$(brew_prefix jenv)/bin/jenv"
-  local JENV_CMDS=(jenv java mvn)
+    local JENV_BIN="$(brew_prefix jenv)/bin/jenv"
+    local JENV_CMDS=(jenv java mvn)
 
-  local PYENV_BIN="$(brew_prefix pyenv)/bin/pyenv"
-  local PYENV_CMDS=(pyenv python python3 pip pip3 hg http https)
+    local PYENV_BIN="$(brew_prefix pyenv)/bin/pyenv"
+    local PYENV_CMDS=(pyenv python python3 pip pip3 hg http https)
 
-  if file_exists "${NVM_BIN}"; then
-    lazyload ${NVM_CMDS} -- "source ${NVM_BIN}"
-  fi
+    if file_exists "${NVM_BIN}"; then
+      lazyload ${NVM_CMDS} -- "source ${NVM_BIN}"
+    fi
 
-  if file_exists "${JENV_BIN}"; then
-    lazyload ${JENV_CMDS} -- "eval \"\$(${JENV_BIN} init -)\""
-  fi
+    if file_exists "${JENV_BIN}"; then
+      lazyload ${JENV_CMDS} -- "eval \"\$(${JENV_BIN} init -)\""
+    fi
 
-  if file_exists "${PYENV_BIN}"; then
-    lazyload ${PYENV_CMDS} -- "eval \"\$(${PYENV_BIN} init -)\""
+    if file_exists "${PYENV_BIN}"; then
+      lazyload ${PYENV_CMDS} -- "eval \"\$(${PYENV_BIN} init -)\""
+    fi
   fi
 }
 
