@@ -30,7 +30,7 @@ HISTFILE="${HOME}/.zhistory"
   local ZSH_COMPLETIONS="$(brew_prefix)/share/zsh-completions"
 
   if dir_exists "${ZSH_COMPLETIONS}"; then
-    FPATH=${ZSH_COMPLETIONS}:$FPATH
+    fpath=("${ZSH_COMPLETIONS}" $fpath)
   fi
 }
 
@@ -137,7 +137,7 @@ HISTFILE="${HOME}/.zhistory"
   local EXECUTABLES_HOME="${HOME}/.bin"
 
   if dir_exists "${EXECUTABLES_HOME}"; then
-    export PATH="${EXECUTABLES_HOME}:${PATH}"
+    path=("${EXECUTABLES_HOME}" $path)
   fi
 }
 
