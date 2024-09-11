@@ -9,9 +9,9 @@
 ############
 
 () {
-  if cmd_exists "$(brew_bin)"; then
+  if dir_exists "$(brew_prefix)"; then
     # Set up brew in the current shell environment.
-    eval "$($(brew_bin) shellenv)"
+    eval "$("$(brew_prefix)/bin/brew" shellenv)"
   fi
 }
 
@@ -31,8 +31,8 @@
 #############
 
 () {
-  local NVM_BIN="$($(brew_bin) --prefix nvm)/nvm.sh"
-  local JENV_BIN="$($(brew_bin) --prefix jenv)/bin/jenv"
+  local NVM_BIN="$(brew_prefix nvm)/nvm.sh"
+  local JENV_BIN="$(brew_prefix jenv)/bin/jenv"
 
   if file_exists "${NVM_BIN}"; then
     lazyload nvm node npm npx -- "source ${NVM_BIN}"
