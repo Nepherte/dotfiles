@@ -72,10 +72,10 @@ formula "pyenv"
 
 # Java
 comment "Java"
-cask "liberica-jdk8-full"
-cask "liberica-jdk11-full"
-cask "liberica-jdk17-full"
-cask "liberica-jdk21-full"
+cask "liberica-jdk8"
+cask "liberica-jdk11"
+cask "liberica-jdk17"
+cask "liberica-jdk21"
 
 # Office
 comment "Office"
