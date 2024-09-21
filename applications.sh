@@ -91,7 +91,7 @@ cask "whatsapp"
 
 # Peripherals
 comment "Peripherals"
-cask "logi-options-plus"
+cask "logi-options+"
 
 # Developer Tools
 comment "Developer Tools"
