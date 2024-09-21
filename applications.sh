@@ -104,6 +104,7 @@ comment "Editors"
 cask "intellij-idea"
 
 # Multimedia
+comment "Multimedia"
 cask "roon"
 cask "tidal"
 
