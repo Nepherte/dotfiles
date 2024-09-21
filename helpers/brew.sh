@@ -2,6 +2,7 @@
 
 . "${DOTFILES:-~/.dotfiles}/helpers/cmd.sh"
 . "${DOTFILES:-~/.dotfiles}/helpers/echos.sh"
+. "${DOTFILES:-~/.dotfiles}/helpers/io.sh"
 . "${DOTFILES:-~/.dotfiles}/helpers/os.sh"
 
 # Returns the location of Homebrew or one of its formulae.
@@ -44,7 +45,7 @@ brew_prefix() {
 install_brew() {
   local brew_prefix="$(brew_prefix)"
 
-  if ! cmd_exists "brew"; then
+  if ! file_exists "$(_brew)"; then
     curl -s -o /tmp/homebrew-install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
     eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh;\$($(_brew) shellenv)"
   else
