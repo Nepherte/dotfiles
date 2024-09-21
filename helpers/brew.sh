@@ -43,8 +43,6 @@ brew_prefix() {
 # Arguments:
 #   None
 install_brew() {
-  local brew_prefix="$(brew_prefix)"
-
   if ! file_exists "$(_brew)"; then
     curl -s -o /tmp/homebrew-install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
     eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh;\$($(_brew) shellenv)"
