@@ -4,6 +4,7 @@ DOTFILES="${0:A:h}"
 
 . "${DOTFILES}/helpers/echos.sh"
 . "${DOTFILES}/helpers/config.sh"
+. "${DOTFILES}/helpers/symlink.sh"
 
 header "Configurations"
 
@@ -39,6 +40,7 @@ config ssh/id_github.pub .ssh/id_github.pub
 config ssh/id_horus.pub .ssh/id_horus.pub
 config ssh/id_osiris.pub .ssh/id_osiris.pub
 config ssh/id_unifi.pub .ssh/id_unifi.pub
+symlink ~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock .1password/agent.sock
 
 ##
 ## vim
