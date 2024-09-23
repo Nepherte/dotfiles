@@ -24,6 +24,18 @@ dir_exists() {
   test -d "$1"
 }
 
+# Indicates whether a socket exists.
+#
+# Globals:
+#   None
+# Arguments:
+#   $1 - the socket to check
+# Returns:
+#   0 if the socket exists, 1 otherwise
+socket_exists() {
+  test -S "$1"
+}
+
 # Indicates whether a location is writable.
 #
 # Globals:
