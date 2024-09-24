@@ -2,6 +2,7 @@
 
 . "${DOTFILES:-~/.dotfiles}/helpers/cmd.sh"
 . "${DOTFILES:-~/.dotfiles}/helpers/echos.sh"
+. "${DOTFILES:-~/.dotfiles}/helpers/io.sh"
 . "${DOTFILES:-~/.dotfiles}/helpers/os.sh"
 
 # Returns the location of Homebrew or one of its formulae.
@@ -52,13 +53,11 @@ brew_bin() {
 # Arguments:
 #   None
 install_brew() {
-  local brew_prefix="$(brew_prefix)"
-
-  if ! cmd_exists "brew"; then
+  if ! file_exists "$(_brew)"; then
     curl -s -o /tmp/homebrew-install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-    eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh;\$(${brew_prefix}/bin/brew shellenv)"
+    eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh;\$($(_brew) shellenv)"
   else
-    eval_cmd "Update Homebrew" "brew update"
+    eval_cmd "Update Homebrew" "$(_brew) update"
   fi
 }
 
@@ -70,7 +69,7 @@ install_brew() {
 #   $1 - the package repository to add
 tap() {
   local name="Tap $1"
-  eval_cmd "$name" "brew tap $1"
+  eval_cmd "$name" "$(_brew) tap $1"
 }
 
 # Installs the specified source package ("formula") from Homebrew (if missing).
@@ -83,7 +82,7 @@ formula() {
   local name="Install $1"
 
   if ! _formula_installed "$1"; then
-    eval_cmd "$name" "brew install --formula $1"
+    eval_cmd "$name" "$(_brew) install --formula $1"
   else
     print_ok "$name"
   fi
@@ -100,10 +99,20 @@ cask() {
   local name="Install $1"
 
   if ! _cask_installed "$1"; then
-    eval_cmd "$name" "brew install --cask --adopt $1"
+    eval_cmd "$name" "$(_brew) install --cask --adopt $1"
   else
     print_ok "$name"
   fi
+}
+
+# Returns the expected location of the brew command.
+#
+# Globals:
+#   None
+# Arguments:
+#   None
+_brew() {
+  echo "$(brew_prefix)/bin/brew"
 }
 
 # Checks if the specified source package ("formula") is installed.
@@ -115,7 +124,7 @@ cask() {
 # Returns:
 #   0 if the formula is installed, 1 otherwise
 _formula_installed() {
-  brew list --formula "$1" &> /dev/null
+  $(_brew) list --formula "$1" &> /dev/null
 }
 
 # Checks if the specified binary package ("cask") is installed.
@@ -127,5 +136,5 @@ _formula_installed() {
 # Returns:
 #   0 if the cask is installed, 1 otherwise
 _cask_installed() {
-  brew list --cask "$1" &> /dev/null
+  $(_brew) list --cask "$1" &> /dev/null
 }
