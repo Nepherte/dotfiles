@@ -55,7 +55,7 @@ formula "tree"
 # Shells
 comment "Shells"
 formula "zsh"
-formula "zsh-completion"
+formula "zsh-completions"
 
 # Productivity
 comment "Productivity"
