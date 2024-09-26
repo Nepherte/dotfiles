@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 . "${DOTFILES:-~/.dotfiles}/helpers/cmd.sh"
+. "${DOTFILES:-~/.dotfiles}/helpers/io.sh"
 
 # Install the Command Line Tools.
 #
@@ -43,7 +44,8 @@ install_rosetta() {
 # Returns:
 #   0 if command line tools are installed, 1 otherwise
 _command_line_tools_installed() {
-  test -d $(xcode-select -p)
+  local COMMAND_LINE_TOOLS=$(xcode-select -p &> /dev/null)
+  test $? -eq 0 && dir_exists "${COMMAND_LINE_TOOLS}"
 }
 
 # Indicates if Rosetta 2 is installed.
