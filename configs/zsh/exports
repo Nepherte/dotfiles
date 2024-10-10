@@ -108,7 +108,7 @@ export HISTFILE="${HOME}/.zhistory"
 ##########
 
 () {
-  if cmd_exists pyenv; then
+  if dir_exists "$(brew_prefix pyenv)"; then
     # Suppress warnings on pyenv regarding non-interactive shells.
     export ZSH_PYENV_QUIET=true
   fi
@@ -133,7 +133,7 @@ export HISTFILE="${HOME}/.zhistory"
   if file_exists "${HOME}/.dircolors"; then
     local GDIRCOLORS="$(brew_prefix coreutils)/libexec/gnubin/dircolors"
 
-    if cmd_exists "${GDIRCOLORS}"; then
+    if file_exists "${GDIRCOLORS}"; then
       # Export LS_COLORS as defined in the dircolors file.
       eval "$(${GDIRCOLORS} ${HOME}/.dircolors)"
     else
