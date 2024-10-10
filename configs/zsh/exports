@@ -111,6 +111,17 @@ HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+#########
+# volta #
+#########
+
+() {
+  if dir_exists "$(brew_prefix volta)"; then
+    export VOLTA_HOME="${HOME}/.volta"
+    path=("${VOLTA_HOME}/bin" $path)
+  fi
+}
+
 #############
 # dircolors #
 #############
