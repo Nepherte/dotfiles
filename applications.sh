@@ -67,7 +67,7 @@ cask "rectangle-pro"
 # Dependency Management
 comment "Dependency Management"
 formula "jenv"
-formula "nvm"
+formula "volta"
 formula "pyenv"
 
 # Java
