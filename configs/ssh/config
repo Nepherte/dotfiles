@@ -1,8 +1,3 @@
-Host anubis.nepherte.com
-  HostName anubis.nepherte.com
-  User bart
-  IdentityFile ~/.ssh/id_anubis.pub
-
 Host horus.nepherte.com
   HostName horus.nepherte.com
   User bart
