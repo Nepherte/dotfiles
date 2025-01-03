@@ -18,6 +18,11 @@ Host github.com
   User git
   IdentityFile ~/.ssh/id_github.pub
 
+Host github-hexagon.com
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/id_luciad.pub
+
 Host git.luciad.com
   HostName git.luciad.com
   User git
