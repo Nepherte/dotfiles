@@ -62,6 +62,7 @@ comment "Productivity"
 cask "alfred"
 cask "firefox"
 cask "iterm2"
+cask "proton-mail"
 cask "rectangle-pro"
 
 # Dependency Management
