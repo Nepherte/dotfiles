@@ -1,3 +1,8 @@
+Host anuket.nepherte.com
+  HostName anuket.nepherte.com
+  User bart
+  IdentityFile ~/.ssh/id_anuket.pub
+
 Host horus.nepherte.com
   HostName horus.nepherte.com
   User bart

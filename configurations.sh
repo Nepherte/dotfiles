@@ -35,6 +35,7 @@ config mvn/settings.xml .m2/settings.xml
 ##
 section "ssh"
 config ssh/config .ssh/config
+config ssh/id_anuket.pub .ssh/id_anuket.pub
 config ssh/id_github.pub .ssh/id_github.pub
 config ssh/id_horus.pub .ssh/id_horus.pub
 config ssh/id_luciad.pub .ssh/id_luciad.pub
