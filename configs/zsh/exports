@@ -4,7 +4,7 @@
 # dotfiles #
 ############
 
-DOTFILES=~/.dotfiles;
+DOTFILES=~/Developer/Personal/Projects/dotfiles;
 
 . "${DOTFILES}/helpers/brew.sh"
 . "${DOTFILES}/helpers/io.sh"
