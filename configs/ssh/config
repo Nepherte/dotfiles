@@ -1,33 +1,4 @@
-Host anuket.nepherte.com
-  HostName anuket.nepherte.com
-  User bart
-  IdentityFile ~/.ssh/id_anuket.pub
-
-Host horus.nepherte.com
-  HostName horus.nepherte.com
-  User bart
-  IdentityFile ~/.ssh/id_horus.pub
-
-Host osiris.nepherte.com
-  HostName osiris.nepherte.com
-  User admin
-  IdentityFile ~/.ssh/id_osiris.pub
-
-Host gateway.nepherte.com
-  HostName gateway.nepherte.com
-  User root
-  IdentityFile ~/.ssh/id_unifi.pub
-
-Host github.com
-  Hostname github.com
-  User git
-  IdentityFile ~/.ssh/id_github.pub
-
-Host github-hexagon
-  Hostname github.com
-  User git
-  IdentityFile ~/.ssh/id_luciad.pub
+Include ~/.ssh/1Password/config
 
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-  IdentitiesOnly yes
