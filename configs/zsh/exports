@@ -100,6 +100,16 @@ HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+########
+# jenv #
+########
+
+() {
+  if dir_exists "$(brew_prefix jenv)"; then
+    export JENV_OPTIONS="-Djavafx.cachedir=${HOME}/.config/openjfx"
+  fi
+}
+
 ##########
 # pyenv #
 ##########
