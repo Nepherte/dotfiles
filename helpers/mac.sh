@@ -44,8 +44,8 @@ install_rosetta() {
 # Returns:
 #   0 if command line tools are installed, 1 otherwise
 _command_line_tools_installed() {
-  local COMMAND_LINE_TOOLS=$(xcode-select -p &> /dev/null)
-  test $? -eq 0 && dir_exists "${COMMAND_LINE_TOOLS}"
+  xcode-select -p &> /dev/null
+  test $? -eq 0
 }
 
 # Indicates if Rosetta 2 is installed.
