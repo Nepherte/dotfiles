@@ -35,16 +35,6 @@ brew_prefix() {
   echo "${brew_prefix}"
 }
 
-# Returns the expected location of Homebrew.
-#
-# Globals:
-#   None
-# Arguments:
-#   None
-brew_bin() {
-  echo "$(brew_home)/bin/brew"
-}
-
 # Installs Homebrew (if missing) and updates it to the latest version. Assumes
 # that the Command Line Tools are installed. See install_command_line_tools.sh
 #
@@ -52,10 +42,10 @@ brew_bin() {
 #   None
 # Arguments:
 #   None
-install_brew_bin() {
+install_brew() {
   if ! file_exists "$(_brew_bin)"; then
     curl -s -o /tmp/homebrew-install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-    eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh;\$($(_brew_bin) shellenv)"
+    eval_cmd "Install Homebrew" "NONINTERACTIVE=1 /bin/bash /tmp/homebrew-install.sh"
   else
     eval_cmd "Update Homebrew" "$(_brew_bin) update"
   fi
