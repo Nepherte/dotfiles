@@ -34,9 +34,6 @@ section "Repositories"
 #comment "Casks"
 #tap "homebrew/cask"
 
-comment "Third-party"
-tap "bell-sw/liberica"
-
 comment "Oh-my-zsh"
 git "https://github.com/ohmyzsh/ohmyzsh.git" "/opt/oh-my-zsh"
 git "https://github.com/qoomon/zsh-lazyload.git" "/opt/oh-my-zsh/custom/plugins/zsh-lazyload"
@@ -73,10 +70,9 @@ formula "pyenv"
 
 # Java
 comment "Java"
-cask "liberica-jdk8"
-cask "liberica-jdk11"
-cask "liberica-jdk17"
-cask "liberica-jdk21"
+cask "microsoft-openjdk@11"
+cask "microsoft-openjdk@17"
+cask "microsoft-openjdk@21"
 
 # Office
 comment "Office"
