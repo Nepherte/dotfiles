@@ -57,5 +57,5 @@ _command_line_tools_installed() {
 # Returns:
 #   0 if rosetta 2 are installed, 1 otherwise
 _rosetta_installed() {
-  test -d /usr/libexec/rosetta
+  dir_exists /usr/libexec/rosetta
 }
