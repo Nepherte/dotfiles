@@ -1,0 +1,63 @@
+<settings>
+  <servers>
+    <server>
+      <id>nepherte-central</id>
+      <username>bart</username>
+      <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
+    </server>
+    <server>
+      <id>nepherte-releases</id>
+      <username>bart</username>
+      <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
+    </server>
+    <server>
+      <id>nepherte-hexagon</id>
+      <username>bart</username>
+      <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
+    </server>
+    <server>
+      <id>archetype</id>
+      <username>bart</username>
+      <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>nepherte</id>
+      <repositories>
+        <repository>
+          <id>nepherte-central</id>
+          <name>Nepherte Central</name>
+          <url>https://mvn.nepherte.com/central</url>
+        </repository>
+        <repository>
+          <id>nepherte-releases</id>
+          <name>Nepherte Releases</name>
+          <url>https://mvn.nepherte.com/releases</url>
+        </repository>
+        <repository>
+          <id>nepherte-hexagon</id>
+          <name>Nepherte Hexagon</name>
+          <url>https://mvn.nepherte.com/hexagon</url>
+        </repository>
+        <repository>
+          <id>archetype</id>
+          <name>Nepherte Archetypes</name>
+          <url>https://mvn.nepherte.com/archetype</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>nepherte-central</id>
+          <name>Nepherte Central</name>
+          <url>https://mvn.nepherte.com/central</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>nepherte</activeProfile>
+  </activeProfiles>
+</settings>

@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+
+# Enable powerlevel10k instant prompt.
+if [[ -r "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+if [[ -r ~/.zsh/exports ]]; then
+  source ~/.zsh/exports
+fi
+
+if [[ -r ~/.zsh/aliases ]]; then
+  source ~/.zsh/aliases
+fi
+
+if [[ -r ~/.zsh/options ]]; then
+  source ~/.zsh/options
+fi
+
+if [[ -r ~/.zsh/theme ]]; then
+  source ~/.zsh/theme
+fi
+
+# vim: set syntax=zsh:

@@ -1,0 +1,131 @@
+#!/usr/bin/env zsh
+
+. "${DOTFILES}/helpers/brew.sh"
+. "${DOTFILES}/helpers/cmd.sh"
+. "${DOTFILES}/helpers/io.sh"
+
+#############
+# coreutils #
+#############
+
+() {
+  local COREUTILS_PREFIX="$(brew_prefix coreutils)"
+  local GNU_BIN="${COREUTILS_PREFIX}/libexec/gnubin"
+
+  # Alias often used gnu-style commands to prevent brew warning
+  if dir_exists "${GNU_BIN}"; then
+    alias base64="${GNU_BIN}/base64"
+    alias cat="${GNU_BIN}/cat"
+    alias chmod="${GNU_BIN}/chmod"
+    alias chown="${GNU_BIN}/chown"
+    alias cp="${GNU_BIN}/cp"
+    alias cut="${GNU_BIN}/cut"
+    alias dircolors="${GNU_BIN}/dircolors"
+    alias dirname="${GNU_BIN}/dirname"
+    alias du="${GNU_BIN}/du"
+    alias echo="${GNU_BIN}/echo"
+    alias groups="${GNU_BIN}/groups"
+    alias kill="${GNU_BIN}/kill"
+    alias ln="${GNU_BIN}/ln"
+    alias md5sum="${GNU_BIN}/md5sum"
+    alias mkdir="${GNU_BIN}/mkdir"
+    alias mv="${GNU_BIN}/mv"
+    alias pwd="${GNU_BIN}/pwd"
+    alias rm="${GNU_BIN}/rm"
+    alias rmdir="${GNU_BIN}/rmdir"
+    alias sha1sum="${GNU_BIN}/sha1sum"
+    alias sha256sum="${GNU_BIN}/sha256sum"
+    alias sha512sum="${GNU_BIN}/sha512sum"
+    alias sort="${GNU_BIN}/sort"
+    alias tail="${GNU_BIN}/tail"
+    alias tee="${GNU_BIN}/tee"
+    alias test="${GNU_BIN}/test"
+    alias touch="${GNU_BIN}/touch"
+    alias uname="${GNU_BIN}/uname"
+    alias uptime="${GNU_BIN}/uptime"
+    alias users="${GNU_BIN}/users"
+    alias wc="${GNU_BIN}/wc"
+    alias whoami="${GNU_BIN}/whoami"
+  fi
+
+  # Size units, colored output, long format
+  if dir_exists "${GNU_BIN}"; then
+    # + directories first, no quotes around names
+    alias ls="${GNU_BIN}/ls -h -l --color=tty --group-directories-first --quoting-style=literal"
+  else
+    alias ls="ls -h -l -G"
+  fi
+}
+
+############
+# roon-tui #
+############
+
+() {
+  # Always run roon-tui from its config folder.
+  if cmd_exists "roon-tui"; then
+    local APP_DIR="${HOME}/.config/roon-tui"
+
+    local CONFIG_FILE="${APP_DIR}/config.json"
+    local LOG_FILE="${APP_DIR}/roon-tui.log"
+
+    if ! dir_exists "${APP_DIR}"; then
+      mkdir -p "${APP_DIR}"
+    fi
+
+    alias roon-tui="roon-tui -c ${CONFIG_FILE} -l ${LOG_FILE}"
+  fi
+}
+
+############
+# lazyload #
+#############
+
+() {
+  if cmd_exists lazyload; then
+    local NVM_BIN="$(brew_prefix nvm)/nvm.sh"
+    local NVM_CMDS=(nvm node npm npx)
+
+    local JENV_BIN="$(brew_prefix jenv)/bin/jenv"
+    local JENV_CMDS=(jenv java mvn)
+
+    local PYENV_BIN="$(brew_prefix pyenv)/bin/pyenv"
+    local PYENV_CMDS=(pyenv python python3 pip pip3 hg http https)
+
+    if file_exists "${NVM_BIN}"; then
+      lazyload ${NVM_CMDS} -- "source ${NVM_BIN}"
+    fi
+
+    if file_exists "${JENV_BIN}"; then
+      lazyload ${JENV_CMDS} -- "eval \"\$(${JENV_BIN} init -)\""
+    fi
+
+    if file_exists "${PYENV_BIN}"; then
+      lazyload ${PYENV_CMDS} -- "eval \"\$(${PYENV_BIN} init -)\""
+    fi
+  fi
+}
+
+###########
+# mullvad #
+###########
+
+() {
+  # The mullvad installer puts symlink in /usr/local/bin
+  if file_exists "/usr/local/bin/mullvad"; then
+    alias mullvad="/usr/local/bin/mullvad"
+  fi
+}
+
+##########
+# docker #
+##########
+
+() {
+  # The docker installer puts symlink in /usr/local/bin
+  if file_exists "/usr/local/bin/docker"; then
+    alias docker="/usr/local/bin/docker"
+  fi
+}
+
+# vim: set syntax=zsh:

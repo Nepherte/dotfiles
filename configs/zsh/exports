@@ -1,0 +1,165 @@
+#!/usr/bin/env zsh
+
+############
+# dotfiles #
+############
+
+DOTFILES=~/Developer/Personal/Projects/dotfiles;
+
+. "${DOTFILES}/helpers/brew.sh"
+. "${DOTFILES}/helpers/io.sh"
+
+##########
+# locale #
+##########
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+#######
+# zsh #
+#######
+
+HISTFILE="${HOME}/.zhistory"
+
+###################
+# zsh-completions #
+###################
+
+() {
+  local ZSH_COMPLETIONS="$(brew_prefix)/share/zsh-completions"
+
+  if dir_exists "${ZSH_COMPLETIONS}"; then
+    fpath=("${ZSH_COMPLETIONS}" $fpath)
+  fi
+}
+
+############
+# homebrew #
+############
+
+() {
+  if dir_exists "$(brew_prefix)"; then
+    # Hide the beer mug emoji after finishing a build in brew.
+    export HOMEBREW_NO_EMOJI=1
+
+    # Don't generate a lock file for brew bundle.
+    export HOMEBREW_BUNDLE_NO_LOCK=1
+
+    # Use vim when editing brew formulae.
+    export HOMEBREW_EDITOR=vim
+
+    # Do not print brew's behaviour with environment variables.
+    export HOMEBREW_NO_ENV_HINTS=1
+
+    # Set up brew in the current shell environment.
+    eval "$("$(brew_prefix)/bin/brew" shellenv)"
+  fi
+}
+
+#############
+# oh-my-zsh #
+#############
+
+() {
+  if file_exists "/opt/oh-my-zsh/oh-my-zsh.sh"; then
+    # Path to the oh-my-zsh installation.
+    ZSH="/opt/oh-my-zsh"
+
+    # Path to the oh-my-zsh custom folder.
+    ZSH_CUSTOM="${ZSH}/custom"
+
+    # Path to the oh-my-zsh cache.
+    ZSH_CACHE_DIR="${HOME}/.cache/oh-my-zsh"
+
+    # Path to the completion cache file.
+    ZSH_COMPDUMP="${ZSH_CACHE_DIR}/zcompdump"
+
+    # Do not manage the title of the terminal.
+    DISABLE_AUTO_TITLE=false
+
+    # Set name of the oh-my-zsh theme to load.
+    ZSH_THEME="powerlevel10k/powerlevel10k"
+
+    # Do not let oh-my-zsh replace ls with an alias.
+    DISABLE_LS_COLORS="true"
+
+    # Load oh-my-zsh with plugins.
+    plugins=(httpie docker zsh-lazyload)
+    source "$ZSH/oh-my-zsh.sh"
+  fi
+}
+
+#######
+# nvm #
+#######
+
+() {
+  if dir_exists "$(brew_prefix nvm)"; then
+    export NVM_DIR=${HOME}/.nvm
+  fi
+}
+
+########
+# jenv #
+########
+
+() {
+  if dir_exists "$(brew_prefix jenv)"; then
+    export JENV_OPTIONS="-Djavafx.cachedir=${HOME}/.config/openjfx"
+  fi
+}
+
+##########
+# pyenv #
+##########
+
+() {
+  if dir_exists "$(brew_prefix pyenv)"; then
+    # Suppress warnings on pyenv regarding non-interactive shells.
+    export ZSH_PYENV_QUIET=true
+  fi
+}
+
+#########
+# volta #
+#########
+
+() {
+  if dir_exists "$(brew_prefix volta)"; then
+    export VOLTA_HOME="${HOME}/.volta"
+    path=("${VOLTA_HOME}/bin" $path)
+  fi
+}
+
+#############
+# dircolors #
+#############
+
+() {
+  if file_exists "${HOME}/.dircolors"; then
+    local GDIRCOLORS="$(brew_prefix coreutils)/libexec/gnubin/dircolors"
+
+    if file_exists "${GDIRCOLORS}"; then
+      # Export LS_COLORS as defined in the dircolors file.
+      eval "$(${GDIRCOLORS} ${HOME}/.dircolors)"
+    else
+      # Fallback to the built-in macOS approach with LSCOLORS.
+      export LSCOLORS=ExFxDxdxCxegedabagacad
+    fi
+  fi
+}
+
+#############
+# 1password #
+#############
+
+() {
+  local _1PASSWORD_SSH_SOCKET="${HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+  if socket_exists "${_1PASSWORD_SSH_SOCKET}"; then
+    export SSH_AUTH_SOCK="${_1PASSWORD_SSH_SOCKET}"
+  fi
+}
+
+# vim: set syntax=zsh:
