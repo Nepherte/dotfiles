@@ -96,7 +96,7 @@ cask "tidal"
 
 # Networking
 comment "Networking"
-cask "mullvadvpn"
+cask "mullvad-vpn"
 cask "transmission"
 cask "transmit"
 
