@@ -1,0 +1,104 @@
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <!-- Luciad -->
+    <server>
+      <id>luciad-publish</id>
+      <username>bverhoev</username>
+      <password>reset on 8/7/2024 {VAtnAOUy360H/r1C7ValBVQhnmszWphOHVzXAd1jJ+Ua6t47pD5U5+qpQC8TtKoH}</password>
+    </server>
+    <server>
+      <id>luciad-central</id>
+      <username>bverhoev</username>
+      <password>reset on 8/7/2024 {VAtnAOUy360H/r1C7ValBVQhnmszWphOHVzXAd1jJ+Ua6t47pD5U5+qpQC8TtKoH}</password>
+    </server>
+
+    <!-- Nepherte -->
+    <server>
+      <id>nepherte-central</id>
+      <username>bart</username>
+      <password>{brvqYiSsTIAHCKEr3RK7oXDyReaucI7kGjYmKnQ7KXPjBnIOQSa46QFl3b61b/QHO1wSz4IYcookkVVfoG1K+yLCCVrYOBz5y9r43QZxg1c1lhse9mD5dgSJ0Q1q0eXb}</password>
+    </server>
+    <server>
+      <id>nepherte-releases</id>
+      <username>bart</username>
+      <password>{brvqYiSsTIAHCKEr3RK7oXDyReaucI7kGjYmKnQ7KXPjBnIOQSa46QFl3b61b/QHO1wSz4IYcookkVVfoG1K+yLCCVrYOBz5y9r43QZxg1c1lhse9mD5dgSJ0Q1q0eXb}</password>
+    </server>
+    <server>
+      <id>nepherte-hexagon</id>
+      <username>bart</username>
+      <password>{brvqYiSsTIAHCKEr3RK7oXDyReaucI7kGjYmKnQ7KXPjBnIOQSa46QFl3b61b/QHO1wSz4IYcookkVVfoG1K+yLCCVrYOBz5y9r43QZxg1c1lhse9mD5dgSJ0Q1q0eXb}</password>
+    </server>
+    <server>
+      <id>archetype</id>
+      <username>bart</username>
+      <password>{brvqYiSsTIAHCKEr3RK7oXDyReaucI7kGjYmKnQ7KXPjBnIOQSa46QFl3b61b/QHO1wSz4IYcookkVVfoG1K+yLCCVrYOBz5y9r43QZxg1c1lhse9mD5dgSJ0Q1q0eXb}</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>nepherte</id>
+
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <repositories>
+        <repository>
+          <id>nepherte-central</id>
+          <name>Nepherte Central</name>
+          <url>https://mvn.nepherte.com/central</url>
+        </repository>
+        <repository>
+          <id>nepherte-releases</id>
+          <name>Nepherte Releases</name>
+          <url>https://mvn.nepherte.com/releases</url>
+        </repository>
+        <repository>
+          <id>nepherte-hexagon</id>
+          <name>Nepherte Hexagon</name>
+          <url>https://mvn.nepherte.com/hexagon</url>
+        </repository>
+        <repository>
+          <id>archetype</id>
+          <name>Nepherte Archetypes</name>
+          <url>https://mvn.nepherte.com/archetype</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>nepherte-central</id>
+          <name>Nepherte Central</name>
+          <url>https://mvn.nepherte.com/central</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+
+    <profile>
+      <id>hexagon</id>
+
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <repositories>
+        <repository>
+          <id>luciad-central</id>
+          <url>https://artifactory.luciad.com:443/artifactory/services_maven</url>
+        </repository>
+        <repository>
+          <id>luciad-publish</id>
+          <url>https://artifactory.luciad.com:443/artifactory/services_projects_maven</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>luciad-central</id>
+          <url>https://artifactory.luciad.com:443/artifactory/services_maven</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+</settings>

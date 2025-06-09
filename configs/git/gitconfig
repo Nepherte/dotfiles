@@ -1,0 +1,22 @@
+[user]
+name = Bart Verhoeven
+email = bart.verhoeven@hexagon.com
+
+[init]
+defaultBranch = main
+
+[core]
+autocrlf = input
+
+[log]
+showSignature = true
+
+[pull]
+rebase = true
+
+[rebase]
+autoStash = true
+
+[include]
+path = ~/.git/includes/1password.inc
+path = ~/.git/includes/intellij.inc
