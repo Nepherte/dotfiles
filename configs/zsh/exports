@@ -143,18 +143,6 @@ export HISTFILE="${HOME}/.zhistory"
   fi
 }
 
-###########
-# scripts #
-###########
-
-() {
-  local EXECUTABLES_HOME="${HOME}/.bin"
-
-  if dir_exists "${EXECUTABLES_HOME}"; then
-    path+=("${EXECUTABLES_HOME}")
-  fi
-}
-
 #############
 # 1password #
 #############
