@@ -125,6 +125,18 @@ export HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+#########
+# maven #
+#########
+
+() {
+  local MVN_HOME="${HOME}/Developer/Third-party/Tools/Maven/latest"
+
+  if dir_exists "${MVN_HOME}"; then
+    path=("${MVN_HOME}/bin" $path)
+  fi
+}
+
 #############
 # dircolors #
 #############
