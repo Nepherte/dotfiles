@@ -127,7 +127,7 @@ HISTFILE="${HOME}/.zhistory"
 
 () {
   if dir_exists "$(brew_prefix volta)"; then
-    export VOLTA_HOME="${HOME}/.volta"
+    export VOLTA_HOME="${HOME}/Developer/Third-party/Tools/volta"
     path=("${VOLTA_HOME}/bin" $path)
   fi
 }
