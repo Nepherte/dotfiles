@@ -109,8 +109,7 @@ export HISTFILE="${HOME}/.zhistory"
 
 () {
   if dir_exists "$(brew_prefix pyenv)"; then
-    # Suppress warnings on pyenv regarding non-interactive shells.
-    export ZSH_PYENV_QUIET=true
+    export PYENV_ROOT="${HOME}/Developer/Third-party/Tools/pyenv"
   fi
 }
 
