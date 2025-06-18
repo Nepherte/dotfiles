@@ -1,4 +1,6 @@
 <settings>
+  <localRepository>${user.home}/Developer/Third-Party/Repositories/Maven</localRepository>
+
   <servers>
     <server>
       <id>nepherte-central</id>
