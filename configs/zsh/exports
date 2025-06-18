@@ -129,7 +129,7 @@ export HISTFILE="${HOME}/.zhistory"
 #########
 
 () {
-  local MVN_HOME="${HOME}/Developer/Third-party/Tools/Maven/latest"
+  local MVN_HOME="${HOME}/Developer/Third-party/Tools/mvn"
 
   if dir_exists "${MVN_HOME}"; then
     path=("${MVN_HOME}/bin" $path)
