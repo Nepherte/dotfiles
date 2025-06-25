@@ -96,10 +96,8 @@ export HISTFILE="${HOME}/.zhistory"
 #######
 
 () {
-  local BREW_NVM_PREFIX="$(brew_prefix nvm)"
-
-  if dir_exists "${BREW_NVM_PREFIX}"; then
-    export NVM_DIR=${HOME}/.nvm
+  if dir_exists "$(brew_prefix nvm)"; then
+    export NVM_DIR="${HOME}/Developer/Third-party/Tools/nvm"
   fi
 }
 
