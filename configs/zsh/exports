@@ -96,7 +96,7 @@ HISTFILE="${HOME}/.zhistory"
 
 () {
   if dir_exists "$(brew_prefix nvm)"; then
-    export NVM_DIR=${HOME}/.nvm
+    export NVM_DIR="${HOME}/Developer/Third-party/Tools/nvm"
   fi
 }
 
