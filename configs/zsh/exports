@@ -103,6 +103,16 @@ export HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+########
+# jenv #
+########
+
+() {
+  if dir_exists "$(brew_prefix jenv)"; then
+    export JENV_ROOT="${HOME}/Developer/Third-party/Tools/jenv"
+  fi
+}
+
 ##########
 # pyenv #
 ##########
