@@ -48,7 +48,7 @@ comment "Productivity"
 cask "alfred"
 cask "firefox"
 cask "iterm2"
-cask "rectangle-pro"
+cask "moom"
 
 # Dependency Management
 comment "Dependency Management"
