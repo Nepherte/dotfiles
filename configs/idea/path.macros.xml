@@ -1,0 +1,9 @@
+<application>
+  <component name="PathMacrosImpl">
+    <macro name="MAVEN_REPOSITORY" value="/Users/bart/.m2/repository" />
+    <macro name="JFX_HOME" value="/Users/bart/Developer/Third-party/Libraries/JavaFX" />
+    <macro name="LFN_HOME" value="/Users/bart/Developer/Hexagon/Products/LuciadFusion" />
+    <macro name="LSP_HOME" value="/Users/bart/Developer/Hexagon/Products/LuciadLightspeed" />
+    <macro name="RIA_HOME" value="/Users/bart/Developer/Hexagon/Products/LuciadRIA" />
+  </component>
+</application>

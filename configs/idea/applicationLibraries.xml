@@ -1,0 +1,115 @@
+<application>
+  <component name="libraryTable">
+    <library name="JavaFX - 21.x - SDK">
+      <CLASSES>
+        <root url="file://$JFX_HOME$/21.x/latest/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$JFX_HOME$/21.x/latest/lib" recursive="false" />
+    </library>
+    <library name="LuciadFusion - 2025.x - Config">
+      <CLASSES>
+        <root url="file://$LFN_HOME$/2025.x/latest/config" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <excluded>
+        <root url="file://$LFN_HOME$/2025.x/latest/config/samples" />
+        <root url="file://$LFN_HOME$/2025.x/latest/config/vmoptions" />
+      </excluded>
+    </library>
+    <library name="LuciadFusion - 2025.x - Data">
+      <CLASSES>
+        <root url="file://$LFN_HOME$/2025.x/latest/samples/resources" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <excluded>
+        <root url="file://$LFN_HOME$/2025.x/latest/samples/resources/samples" />
+      </excluded>
+    </library>
+    <library name="LuciadFusion - 2025.x - SDK">
+      <CLASSES>
+        <root url="file://$LFN_HOME$/2025.x/latest/lib" />
+        <root url="file://$LFN_HOME$/2025.x/latest/lib/platform" />
+        <root url="file://$LFN_HOME$/2025.x/latest/lib/thirdparty" />
+        <root url="jar://$LFN_HOME$/2025.x/latest/licenses/development.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$LFN_HOME$/2025.x/latest/docs/reference/LuciadFusion" />
+      </JAVADOC>
+      <SOURCES />
+      <jarDirectory url="file://$LFN_HOME$/2025.x/latest/lib" recursive="false" />
+      <jarDirectory url="file://$LFN_HOME$/2025.x/latest/lib/platform" recursive="false" />
+      <jarDirectory url="file://$LFN_HOME$/2025.x/latest/lib/thirdparty" recursive="false" />
+    </library>
+    <library name="LuciadFusion - 2025.x - Samples">
+      <CLASSES>
+        <root url="file://$LFN_HOME$/2025.x/latest/samples/lib" />
+        <root url="file://$LFN_HOME$/2025.x/latest/samples/resources" />
+        <root url="file://$LFN_HOME$/2025.x/latest/samples/lib/thirdparty" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$LFN_HOME$/2025.x/latest/samples/src" />
+      </SOURCES>
+      <excluded>
+        <root url="file://$LFN_HOME$/2025.x/latest/samples/resources/Data" />
+      </excluded>
+      <jarDirectory url="file://$LFN_HOME$/2025.x/latest/samples/lib" recursive="false" />
+      <jarDirectory url="file://$LFN_HOME$/2025.x/latest/samples/lib/thirdparty" recursive="false" />
+    </library>
+    <library name="LuciadLightspeed - 2025.x - Config">
+      <CLASSES>
+        <root url="file://$LSP_HOME$/2025.x/latest/config" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <excluded>
+        <root url="file://$LSP_HOME$/2025.x/latest/config/samples" />
+        <root url="file://$LSP_HOME$/2025.x/latest/config/vmoptions" />
+      </excluded>
+    </library>
+    <library name="LuciadLightspeed - 2025.x - Data">
+      <CLASSES>
+        <root url="file://$LSP_HOME$/2025.x/latest/samples/resources" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <excluded>
+        <root url="file://$LSP_HOME$/2025.x/latest/samples/resources/samples" />
+      </excluded>
+    </library>
+    <library name="LuciadLightspeed - 2025.x - SDK">
+      <CLASSES>
+        <root url="file://$LSP_HOME$/2025.x/latest/lib" />
+        <root url="file://$LSP_HOME$/2025.x/latest/lib/thirdparty" />
+        <root url="jar://$LSP_HOME$/2025.x/latest/licenses/development.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="file://$LSP_HOME$/2025.x/latest/docs/reference/LuciadLightspeed" />
+      </JAVADOC>
+      <SOURCES />
+      <jarDirectory url="file://$LSP_HOME$/2025.x/latest/lib" recursive="false" />
+      <jarDirectory url="file://$LSP_HOME$/2025.x/latest/lib/platform" recursive="false" />
+      <jarDirectory url="file://$LSP_HOME$/2025.x/latest/lib/thirdparty" recursive="false" />
+    </library>
+    <library name="LuciadLightspeed - 2025.x - Samples">
+      <CLASSES>
+        <root url="file://$LSP_HOME$/2025.x/latest/samples/lib" />
+        <root url="file://$LSP_HOME$/2025.x/latest/samples/resources" />
+        <root url="file://$LSP_HOME$/2025.x/latest/samples/lib/thirdparty" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$LSP_HOME$/2025.x/latest/samples/src" />
+      </SOURCES>
+      <excluded>
+        <root url="file://$LSP_HOME$/2025.x/latest/samples/resources/Data" />
+      </excluded>
+      <jarDirectory url="file://$LSP_HOME$/2025.x/latest/samples/lib" recursive="false" />
+      <jarDirectory url="file://$LSP_HOME$/2025.x/latest/samples/lib/thirdparty" recursive="false" />
+    </library>
+  </component>
+</application>
