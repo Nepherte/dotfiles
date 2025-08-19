@@ -3,6 +3,7 @@
 . "${DOTFILES:-~/.dotfiles}/helpers/cmd.sh"
 . "${DOTFILES:-~/.dotfiles}/helpers/io.sh"
 
+
 # Install the Command Line Tools.
 #
 # Globals:
@@ -35,6 +36,23 @@ install_rosetta() {
   fi
 }
 
+# Installs the specified application from the App Store (if missing).
+# Assumes that mas is installed and that you're signed in.
+#
+# Globals:
+#   None
+# Arguments:
+#   $1 - the application id
+app() {
+  local name="Install $(mas info $1 | head -n 1)"
+
+  if ! _app_installed "$1"; then
+    eval_cmd "$name" "mas install $1"
+  else
+    print_ok "$name"
+  fi
+}
+
 # Indicates if the Command Line Tools are installed.
 #
 # Globals:
@@ -58,4 +76,16 @@ _command_line_tools_installed() {
 #   0 if rosetta 2 are installed, 1 otherwise
 _rosetta_installed() {
   test -d /usr/libexec/rosetta
+}
+
+# Checks if the specified application from the app store is installed.
+#
+# Globals:
+#   None
+# Arguments:
+#   $1 - the application id
+# Returns:
+#   0 if the application is installed, 1 otherwise
+_app_installed() {
+  mas list 2>&1 | grep $1 &> /dev/null
 }
