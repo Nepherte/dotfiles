@@ -51,6 +51,17 @@ install_brew() {
   fi
 }
 
+# Installs mas (if missing) and updates it to the latest version. Assumes that
+# Homebrew is installed.
+#
+# Globals:
+#   None
+# Arguments:
+#   None
+install_mas() {
+  formula "mas"
+}
+
 # Adds the specified package repository ("tap") to Homebrew.
 #
 # Globals:
