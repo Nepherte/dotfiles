@@ -64,7 +64,7 @@
         <repository>
           <id>archetype</id>
           <name>Nepherte Archetypes</name>
-          <url>https://mvn.nepherte.com/archetype</url>
+          <url>https://mvn.nepherte.com/archetypes</url>
         </repository>
       </repositories>
       <pluginRepositories>
