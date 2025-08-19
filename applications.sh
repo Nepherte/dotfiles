@@ -17,6 +17,7 @@ ask_for_sudo
 section "Prerequisites"
 install_command_line_tools
 install_brew
+install_mas
 
 ##
 ## Repositories
@@ -99,6 +100,7 @@ comment "Networking"
 cask "mullvad-vpn"
 cask "transmission"
 cask "transmit"
+app "1451685025" # WireGuard
 
 # Security
 comment "Security"
