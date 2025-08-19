@@ -110,6 +110,16 @@ HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+#########
+# jabba #
+#########
+
+() {
+  if dir_exists "$(brew_prefix jabba)"; then
+    source "$(brew_prefix jabba)/jabba.sh"
+  fi
+}
+
 ##########
 # pyenv #
 ##########
