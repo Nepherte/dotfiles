@@ -85,7 +85,7 @@ HISTFILE="${HOME}/.zhistory"
     DISABLE_LS_COLORS="true"
 
     # Load oh-my-zsh with plugins.
-    plugins=(httpie docker zsh-lazyload)
+    plugins=(httpie docker zsh-lazyload zsh-jabba)
     source "$ZSH/oh-my-zsh.sh"
   fi
 }
