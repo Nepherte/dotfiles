@@ -101,7 +101,7 @@ comment "Networking"
 cask "mullvad-vpn"
 cask "transmission"
 cask "transmit"
-app "1451685025" # WireGuard
+cask "unifi-identity-endpoint"
 
 # Security
 comment "Security"
