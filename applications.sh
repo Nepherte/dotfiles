@@ -62,6 +62,7 @@ comment "Java"
 cask "microsoft-openjdk@11"
 cask "microsoft-openjdk@17"
 cask "microsoft-openjdk@21"
+cask "microsoft-openjdk@25"
 
 # Office
 comment "Office"
