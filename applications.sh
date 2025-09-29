@@ -88,6 +88,7 @@ cask "httpie"
 
 # Editors
 comment "Editors"
+cask "markedit"
 cask "intellij-idea"
 
 # Multimedia
