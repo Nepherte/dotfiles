@@ -99,6 +99,7 @@ cask "tidal"
 
 # Networking
 comment "Networking"
+cask "localsend"
 cask "mullvad-vpn"
 cask "transmission"
 cask "transmit"
