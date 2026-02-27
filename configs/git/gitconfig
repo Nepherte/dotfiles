@@ -1,0 +1,16 @@
+[user]
+name = Bart Verhoeven
+email = verhoevenbart@icloud.com
+
+[init]
+defaultBranch = main
+
+[core]
+autocrlf = input
+
+[log]
+showSignature = true
+
+[include]
+path = ~/.git/includes/1password.inc
+path = ~/.git/includes/intellij.inc
