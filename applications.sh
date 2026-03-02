@@ -104,4 +104,3 @@ cask "1password"
 cask "mullvad-vpn"
 
 cask "yubico-authenticator"
-cask "unifi-identity-endpoint"
