@@ -65,6 +65,7 @@ cask "microsoft-openjdk@25"
 
 # Office
 comment "Office"
+cask "microsoft-edge"
 cask "microsoft-word"
 cask "microsoft-excel"
 cask "microsoft-powerpoint"
