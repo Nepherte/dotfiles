@@ -8,16 +8,6 @@
       <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
     </server>
     <server>
-      <id>nepherte-products</id>
-      <username>bart</username>
-      <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
-    </server>
-    <server>
-      <id>nepherte-extensions</id>
-      <username>bart</username>
-      <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
-    </server>
-    <server>
       <id>archetype</id>
       <username>bart</username>
       <password>{fIiHzvlBxQwHAErLsnbgMt1Q+c84DIxpbNjt1QPvV5UiZczVvnIdKzmDU8oTE/44mzj56DGymeAcHw0vll1FLeAqQfC+8uHYVOY0f70P7RCRgWISvQWXbPSff5F7l1tH}</password>
@@ -32,16 +22,6 @@
           <id>nepherte-central</id>
           <name>Nepherte Central</name>
           <url>https://mvn.nepherte.com/central</url>
-        </repository>
-        <repository>
-          <id>nepherte-products</id>
-          <name>Nepherte Products</name>
-          <url>https://mvn.nepherte.com/products</url>
-        </repository>
-        <repository>
-          <id>nepherte-extensions</id>
-          <name>Nepherte Extensions</name>
-          <url>https://mvn.nepherte.com/extensions</url>
         </repository>
         <repository>
           <id>archetype</id>
