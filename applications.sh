@@ -82,8 +82,12 @@ cask "logi-options+"
 # Developer Tools
 comment "Developer Tools"
 formula "git"
-cask "docker"
+formula "colima"
 cask "httpie"
+
+formula "docker"
+formula "docker-compose"
+formula "docker-completion"
 
 # Editors
 comment "Editors"
