@@ -15,6 +15,12 @@ section "dircolors"
 config dircolors/dircolors .dircolors
 
 ##
+## docker
+##
+section "docker"
+config docker/config.json .docker/config.json
+
+##
 ## git
 ##
 section "git"
