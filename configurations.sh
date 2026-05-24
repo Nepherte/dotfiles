@@ -21,6 +21,12 @@ section "docker"
 config docker/config.json .docker/config.json
 
 ##
+## colima
+##
+section "colima"
+config colima/default/colima.yaml .colima/default/colima.yaml
+
+##
 ## git
 ##
 section "git"
