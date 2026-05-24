@@ -123,6 +123,14 @@ HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+########
+# java #
+########
+
+() {
+  export JDK_JAVA_OPTIONS="-Djavafx.cachedir=${HOME}/.config/openjfx"
+}
+
 ##########
 # pyenv #
 ##########
