@@ -87,7 +87,6 @@ cask "httpie-desktop"
 
 formula "docker"
 formula "docker-compose"
-formula "docker-completion"
 
 # Editors
 comment "Editors"
