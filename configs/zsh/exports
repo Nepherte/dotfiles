@@ -55,6 +55,9 @@ HISTFILE="${HOME}/.zhistory"
     # Disable brew analytics from being sent.
     export HOMEBREW_NO_ANALYTICS=1
 
+    # Enable trust checks for third-party taps.
+    export HOMEBREW_REQUIRE_TAP_TRUST=1
+
     # Set up brew in the current shell environment.
     eval "$("$(brew_prefix)/bin/brew" shellenv)"
   fi
