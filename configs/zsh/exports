@@ -52,6 +52,9 @@ HISTFILE="${HOME}/.zhistory"
     # Do not print brew's behaviour with environment variables.
     export HOMEBREW_NO_ENV_HINTS=1
 
+    # Enable trust checks for third-party taps.
+    export HOMEBREW_REQUIRE_TAP_TRUST=1
+
     # Set up brew in the current shell environment.
     eval "$("$(brew_prefix)/bin/brew" shellenv)"
   fi
