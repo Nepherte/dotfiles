@@ -3,3 +3,7 @@
 if [[ -r ~/.zsh/exports ]]; then
   source ~/.zsh/exports
 fi
+
+if [[ -d "$NVM_DIR" ]]; then
+  source "$NVM_DIR/nvm.sh"
+fi
