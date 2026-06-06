@@ -1,5 +1,5 @@
 <settings>
-  <localRepository>${user.home}/Developer/Third-Party/Repositories/Maven</localRepository>
+  <localRepository>${user.home}/Developer/Third-party/Libraries/Maven</localRepository>
 
   <servers>
     <server>
