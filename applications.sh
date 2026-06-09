@@ -43,6 +43,7 @@ formula "tree"
 comment "Shells"
 formula "zsh"
 formula "zsh-completions"
+formula "powershell"
 
 # Productivity
 comment "Productivity"
