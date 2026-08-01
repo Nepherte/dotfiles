@@ -25,7 +25,6 @@
     alias du="${GNU_BIN}/du"
     alias echo="${GNU_BIN}/echo"
     alias groups="${GNU_BIN}/groups"
-    alias kill="${GNU_BIN}/kill"
     alias ln="${GNU_BIN}/ln"
     alias md5sum="${GNU_BIN}/md5sum"
     alias mkdir="${GNU_BIN}/mkdir"
