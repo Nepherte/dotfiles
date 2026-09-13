@@ -55,6 +55,9 @@ HISTFILE="${HOME}/.zhistory"
     # Disable brew analytics from being sent.
     export HOMEBREW_NO_ANALYTICS=1
 
+    # Do not upgrade casks with built-in auto updates.
+    export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
+
     # Set up brew in the current shell environment.
     eval "$("$(brew_prefix)/bin/brew" shellenv)"
   fi
