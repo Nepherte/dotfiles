@@ -112,3 +112,8 @@ cask "unifi-identity-endpoint"
 comment "Security"
 cask "1password"
 cask "yubico-authenticator"
+
+# Time Machine
+comment "Time Machine"
+formula "asimov"
+

@@ -1,0 +1,18 @@
+[fixed_dirs]
+enabled = true          # Exclude the built-in global caches
+
+extra = ~/Applications  # Exclude applications
+extra = ~/Developer     # Exclude developer tools
+extra = ~/Downloads     # Exclude downloaded files
+extra = ~/Movies        # Exclude movies
+extra = ~/Music         # Exclude music
+
+extra = ~/.colima       # Exclude container runtimes
+extra = ~/.m2/wrapper   # Exclude maven wrappers
+
+[skip_paths]
+extra = ~/Applications  # Skip fixed dir
+extra = ~/Developer     # Skip fixed dir
+extra = ~/Downloads     # Skip fixed dir
+extra = ~/Movies        # Skip fixed dir
+extra = ~/Music         # Skip fixed dir
