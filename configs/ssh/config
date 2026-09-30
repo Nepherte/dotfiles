@@ -1,4 +1,16 @@
 Include ~/.ssh/1Password/config
 
+Host octave.github.com
+  HostName github.com
+  User git
+  IdentityFile "~/.ssh/1Password/SHA256_IXiN5bFXhxS8FwrF2mM9vpIuIJVXkY9wsfFiEgD9YA.pub"
+  IdentitiesOnly yes
+
+Host nepherte.github.com
+  HostName github.com
+  User git
+  IdentityFile "~/.ssh/1Password/SHA256_F13CZQM1L8404+TEsis0OFbBzsmuSQyZ+TIUuItosFs.pub"
+  IdentitiesOnly yes
+
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

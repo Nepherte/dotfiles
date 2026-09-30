@@ -109,3 +109,8 @@ cask "1password"
 cask "mullvad-vpn"
 
 cask "yubico-authenticator"
+
+# Time Machine
+comment "Time Machine"
+formula "asimov"
+

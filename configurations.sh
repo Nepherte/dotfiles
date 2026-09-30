@@ -9,6 +9,12 @@ DOTFILES="${0:A:h}"
 header "Configurations"
 
 ##
+## asimov
+##
+section "asimov"
+config asimov/config .config/asimov/config
+
+##
 ## dircolors
 ##
 section "dircolors"
