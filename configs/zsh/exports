@@ -96,6 +96,16 @@ HISTFILE="${HOME}/.zhistory"
   fi
 }
 
+########
+# curl #
+########
+
+() {
+  if dir_exists "$(brew_prefix curl)"; then
+    export PATH="$(brew_prefix curl)/bin:$PATH"
+  fi
+}
+
 #######
 # nvm #
 #######
